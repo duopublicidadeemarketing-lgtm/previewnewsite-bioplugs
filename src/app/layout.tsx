@@ -34,8 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-const HERO_FIRST_IMG =
-  "https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=1200&q=75&auto=format&fit=crop";
+const HERO_FIRST_IMG = "/hero/dianthus.jpg";
 
 export default function RootLayout({
   children,

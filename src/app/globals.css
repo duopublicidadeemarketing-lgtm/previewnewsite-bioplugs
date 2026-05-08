@@ -93,7 +93,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background-size: cover; background-position: center;
   background-color: var(--ink);
   background-image: linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.55) 100%),
-    url('https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=1200&q=75&auto=format&fit=crop');
+    url('/hero/dianthus.jpg');
   transform: scale(1.04);
   animation: hero-zoom 18s ease-out infinite alternate;
   transition: opacity 1.5s ease, background-image 0.8s ease;
@@ -377,22 +377,210 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pdet-bcta h2 .it { font-style: italic; color: var(--lime); font-weight: 500; }
 .pdet-bcta p { font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.7); max-width: 50ch; }
 
-/* ─── RESPONSIVE ─── */
+/* ═══ RESPONSIVE ═══ */
+
+/* Tablet (≤ 1100px) */
 @media (max-width: 1100px) {
+  .v10-nav, .v10-section, .v10-hero, .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final, .v10-footer, .cat-hero, .cat-band, .cat-filter-row, .pdet-breadcrumb, .pdet-hero, .pdet-tech, .pdet-bcta { padding-left: 2rem; padding-right: 2rem; }
   .v10-intro, .v10-cta-final, .v10-process-grid { grid-template-columns: 1fr; gap: 3rem; }
   .v10-cat-grid, .v10-breeder-cards { grid-template-columns: 1fr 1fr; }
   .v10-var-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; min-height: 0; }
   .v10-var-item-1, .v10-var-item-2, .v10-var-item-3, .v10-var-item-4 { grid-row: auto; grid-column: auto; min-height: 320px; }
-  .v10-nav, .v10-section, .v10-hero, .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final, .v10-footer, .cat-hero, .cat-band, .cat-filter-row, .pdet-breadcrumb, .pdet-hero, .pdet-tech, .pdet-bcta { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .pdet-iconrow { margin-left: 1.5rem; margin-right: 1.5rem; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .pdet-iconrow { margin-left: 2rem; margin-right: 2rem; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
   .pdet-iconpill::after { display: none; }
   .pdet-hero, .pdet-tech, .pdet-bcta { grid-template-columns: 1fr; gap: 3rem; }
   .pdet-gallery, .pdet-tech-side { position: static; }
-  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat-grid { grid-template-columns: repeat(3, 1fr); }
   .cat-hero, .cat-band-header { grid-template-columns: 1fr; gap: 2rem; }
   .cat-band-desc { justify-self: start; text-align: left; }
   .cat-hero::before { width: 100%; opacity: 0.18; }
-  .v10-hero-footer { left: 1.5rem; right: 1.5rem; }
+  .v10-hero-footer { left: 2rem; right: 2rem; }
   .v10-footer-top { grid-template-columns: 1fr 1fr; }
   .v10-cat-header, .v10-var-header { flex-direction: column; align-items: start; }
 }
+
+/* Mobile (≤ 720px) */
+@media (max-width: 720px) {
+  body { font-size: 15px; }
+  .v10-nav, .v10-section, .v10-hero, .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final, .v10-footer, .cat-hero, .cat-band, .cat-filter-row, .pdet-breadcrumb, .pdet-hero, .pdet-tech, .pdet-bcta { padding-left: 1.25rem; padding-right: 1.25rem; }
+
+  /* Section vertical padding scaled down */
+  .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final { padding-top: 4rem; padding-bottom: 4rem; }
+  .cat-hero { padding-top: 7rem; padding-bottom: 3rem; min-height: auto; }
+  .cat-band { padding-top: 3rem; padding-bottom: 2rem; }
+  .pdet-hero { padding-bottom: 3rem; }
+  .pdet-tech { padding-bottom: 4rem; }
+  .pdet-bcta { padding: 4rem 1.25rem; }
+
+  /* Nav: hamburger reveals menu */
+  .v10-nav { padding: 1rem 1.25rem; }
+  .v10-nav.scrolled { padding: 0.85rem 1.25rem; }
+  .v10-nav-links { display: none; }
+  .v10-nav-cta { display: none; }
+  .v10-nav-mobile-toggle { display: flex; }
+  .v10-nav-logo-img { height: 36px; }
+  .v10-nav-logo-text { font-size: 0.95rem; }
+  .v10-nav-logo-sub { font-size: 0.46rem; letter-spacing: 0.14em; }
+
+  /* Hero */
+  .v10-hero { padding: 0 1.25rem 4rem; min-height: 92vh; }
+  .v10-hero-title { font-size: clamp(2rem, 9vw, 3.2rem); margin-bottom: 1.4rem; }
+  .v10-hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.24em; margin-bottom: 1rem; }
+  .v10-hero-eyebrow::before { width: 24px; }
+  .v10-hero-sub { font-size: 0.95rem; margin-bottom: 1.8rem; }
+  .v10-hero-actions { flex-direction: column; gap: 0.7rem; align-items: flex-start; }
+  .v10-btn { padding: 0.85rem 1.4rem; font-size: 0.78rem; width: auto; }
+  .v10-hero-footer { left: 1.25rem; right: 1.25rem; bottom: 1.2rem; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  .v10-hero-footer-spec { font-size: 1.05rem; }
+  .v10-hero-footer-meta { font-size: 0.6rem; letter-spacing: 0.16em; }
+  .v10-hero-scroll { display: none; }
+
+  /* Section titles */
+  .v10-section-title { font-size: clamp(2rem, 7vw, 2.8rem); }
+  .v10-section-eyebrow { font-size: 0.62rem; letter-spacing: 0.24em; }
+  .v10-section-sub { font-size: 1rem; }
+
+  /* Intro */
+  .v10-intro { padding-left: 1.25rem; padding-right: 1.25rem; gap: 2rem; }
+  .v10-intro-stats { grid-template-columns: 1fr 1fr 1fr; gap: 1rem; padding-top: 1.5rem; }
+  .v10-istat-num { font-size: 2.4rem; }
+  .v10-istat-num sup { font-size: 1rem; }
+  .v10-istat-label { font-size: 0.6rem; letter-spacing: 0.16em; }
+
+  /* Categories: 1 col stack */
+  .v10-cat-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .v10-cat-tile { aspect-ratio: 4/5; }
+  .v10-cat-tile-content { padding: 1.6rem; }
+  .v10-cat-tile-num { font-size: 3.5rem; }
+  .v10-cat-tile-name { font-size: 1.8rem; }
+  .v10-cat-tile-desc { font-size: 0.85rem; opacity: 1; transform: none; }
+  .v10-cat-tile::after { opacity: 0.92; }
+
+  /* Varieties: 1 col stack */
+  .v10-var-grid { grid-template-columns: 1fr; min-height: 0; gap: 1rem; }
+  .v10-var-item-1, .v10-var-item-2, .v10-var-item-3, .v10-var-item-4 { min-height: 280px; }
+  .v10-var-name { font-size: 1.4rem !important; }
+
+  /* Breeders cards stack */
+  .v10-breeder-cards { grid-template-columns: 1fr; gap: 1rem; }
+  .v10-bcard { padding: 1.8rem; }
+  .v10-bcard-name { font-size: 1.7rem; }
+  .v10-breeders-map { margin: 2rem auto 3rem; }
+
+  /* Process */
+  .v10-process-grid { gap: 2rem; }
+  .v10-process-photo { min-height: 280px; }
+  .v10-process-item { grid-template-columns: 50px 1fr; gap: 1.2rem; padding: 1.4rem 0; }
+  .v10-process-num { font-size: 1.4rem; }
+  .v10-process-title { font-size: 1.2rem; }
+
+  /* CTA Final */
+  .v10-cta-final { gap: 2rem; padding-top: 5rem; padding-bottom: 5rem; }
+  .v10-cta-row { padding: 1.4rem 0; }
+  .v10-cta-row-content h3 { font-size: 1.3rem; }
+  .v10-cta-row-content p { font-size: 0.85rem; }
+  .v10-cta-row-arrow { width: 42px; height: 42px; }
+
+  /* Footer */
+  .v10-footer { padding: 3rem 1.25rem 1.5rem; }
+  .v10-footer-top { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2rem; }
+  .v10-footer-brand h2 { font-size: 1.8rem; }
+  .v10-footer-bottom { flex-direction: column; gap: 0.6rem; align-items: flex-start; font-size: 0.7rem; padding-top: 1.2rem; }
+
+  /* /produtos catalog */
+  .cat-hero-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .cat-hero-sub { font-size: 0.95rem; }
+  .cat-hero-meta-num { font-size: 2.2rem; }
+  .cat-hero-meta-label { font-size: 0.62rem; letter-spacing: 0.16em; }
+
+  /* Filters: horizontal scroll */
+  .cat-filters { top: 64px; }
+  .cat-filter-row { padding: 0.7rem 1.25rem; gap: 0.8rem; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .cat-filter-row::-webkit-scrollbar { display: none; }
+  .cat-filter-row-secondary { gap: 1rem; }
+  .cat-filter-divider { display: none; }
+  .cat-filter-group { gap: 0.45rem; flex-shrink: 0; }
+  .cat-filter-label { font-size: 0.55rem; letter-spacing: 0.18em; }
+  .cat-fchip { padding: 0.38rem 0.75rem; font-size: 0.72rem; }
+  .cat-fchip-cat { font-size: 0.85rem; padding: 0.42rem 0.9rem; }
+  .cat-filter-spacer { display: none; }
+  .cat-filter-count { font-size: 0.72rem; flex-shrink: 0; margin-left: auto; }
+  .cat-filter-clear { font-size: 0.62rem; flex-shrink: 0; }
+
+  /* Bands */
+  .cat-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .cat-band-name { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .cat-band-count { font-size: 1.05rem; }
+  .cat-band-desc { font-size: 0.9rem; }
+  .pcard-name { font-size: 1.05rem; }
+  .pcard-meta { font-size: 0.55rem; letter-spacing: 0.14em; }
+  .pcard-body { padding: 0.85rem 0.85rem 1rem; }
+  .pcard-badge { width: 36px; height: 36px; top: 8px; right: 8px; }
+  .pcard-badge-letter { font-size: 0.85rem; }
+  .pcard-overlay { padding: 0.9rem 0.85rem; transform: translateY(0); }
+  .pcard-overlay-text { display: none; }
+  .pcard-overlay-link { display: none; }
+
+  /* Produto detalhe */
+  .pdet-breadcrumb { padding-top: 5.5rem; font-size: 0.65rem; flex-wrap: wrap; }
+  .pdet-breadcrumb .current { font-size: 0.8rem; }
+  .pdet-info-title { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .pdet-info-common { font-size: 0.6rem; letter-spacing: 0.24em; }
+  .pdet-tag { font-size: 0.62rem; padding: 0.36rem 0.78rem; }
+  .pdet-info-desc { font-size: 0.95rem; }
+  .pdet-cta-row { gap: 0.7rem; }
+  .pdet-btn { padding: 0.85rem 1.3rem; font-size: 0.74rem; }
+
+  /* Icon pills: 3x2 grid on mobile */
+  .pdet-iconrow { margin-left: 1.25rem; margin-right: 1.25rem; padding: 2rem 0; grid-template-columns: repeat(3, 1fr); gap: 1.5rem 0.6rem; }
+  .pdet-iconpill-circle { width: 56px; height: 56px; margin-bottom: 0.7rem; }
+  .pdet-iconpill-circle svg { width: 24px; height: 24px; }
+  .pdet-iconpill-label { font-size: 0.55rem; letter-spacing: 0.14em; }
+  .pdet-iconpill-value { font-size: 0.7rem; }
+  .pdet-iconpill-divider { width: 18px; margin: 0.4rem auto; }
+
+  /* Tech table */
+  .pdet-tech-title { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .pdet-tech-row { grid-template-columns: 1fr; gap: 0.4rem; padding: 1rem 0; }
+  .pdet-tech-key { font-size: 0.62rem; }
+  .pdet-tech-val { font-size: 0.92rem; }
+
+  /* Bottom CTA */
+  .pdet-bcta { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.25rem; }
+  .pdet-bcta h2 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .pdet-bcta p { font-size: 0.95rem; }
+  .pdet-bcta::before { display: none; }
+
+  /* World map: hide labels overflowing on tiny screens, scale down */
+  .v10-map-label { font-size: 9px; }
+  .v10-map-label-hq { font-size: 11px; }
+}
+
+/* Tiny screens (≤ 380px) */
+@media (max-width: 380px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .pdet-iconrow { grid-template-columns: repeat(2, 1fr); }
+  .v10-intro-stats { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* Hamburger toggle button — hidden on desktop */
+.v10-nav-mobile-toggle { display: none; flex-direction: column; gap: 4px; padding: 0.5rem; cursor: pointer; background: none; border: none; }
+.v10-nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--ink); transition: transform 0.3s ease, opacity 0.3s ease; border-radius: 2px; }
+.v10-nav-mobile-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.v10-nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
+.v10-nav-mobile-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Mobile menu sheet */
+.v10-nav-mobile-sheet {
+  position: fixed; top: 0; right: 0; width: min(86vw, 340px); height: 100dvh;
+  background: var(--paper); z-index: 99; padding: 5.5rem 2rem 2rem;
+  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.65,0,0.35,1);
+  display: flex; flex-direction: column; gap: 0.8rem;
+  box-shadow: -20px 0 60px rgba(15,25,34,0.18);
+}
+.v10-nav-mobile-sheet.open { transform: none; }
+.v10-nav-mobile-sheet a { padding: 0.8rem 0; font-family: var(--font-display); font-style: italic; font-size: 1.6rem; color: var(--ink); border-bottom: 1px solid var(--line); transition: color 0.25s ease; }
+.v10-nav-mobile-sheet a:hover { color: var(--lime-deep); }
+.v10-nav-mobile-sheet .v10-nav-cta-mobile { display: inline-flex; align-self: flex-start; margin-top: 1rem; background: var(--ink); color: white; padding: 0.95rem 1.6rem; border-radius: 999px; font-family: var(--font-body); font-style: normal; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; border: none; }
+.v10-nav-mobile-backdrop { position: fixed; inset: 0; background: rgba(15,25,34,0.4); z-index: 98; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.v10-nav-mobile-backdrop.open { opacity: 1; pointer-events: auto; }

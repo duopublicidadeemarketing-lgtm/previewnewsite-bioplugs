@@ -14,6 +14,7 @@ const navLinks = [
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   const logoRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
@@ -21,6 +22,18 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   // Remove white background from logo PNG via canvas
   useEffect(() => {
@@ -56,33 +69,63 @@ export function Header() {
   }, []);
 
   return (
-    <nav className={`v10-nav ${scrolled ? "scrolled" : ""}`}>
-      <Link href="/" className="v10-nav-logo">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          ref={logoRef}
-          className="v10-nav-logo-img"
-          src="/brand/logo.png"
-          alt="Bioplugs"
-          crossOrigin="anonymous"
-        />
-        <div>
-          <div className="v10-nav-logo-text">
-            Bio<em>Plugs</em>
+    <>
+      <nav className={`v10-nav ${scrolled ? "scrolled" : ""}`}>
+        <Link href="/" className="v10-nav-logo" onClick={() => setOpen(false)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            ref={logoRef}
+            className="v10-nav-logo-img"
+            src="/brand/logo.png"
+            alt="Bioplugs"
+            crossOrigin="anonymous"
+          />
+          <div>
+            <div className="v10-nav-logo-text">
+              Bio<em>Plugs</em>
+            </div>
+            <div className="v10-nav-logo-sub">Mudas tecnicamente produzidas</div>
           </div>
-          <div className="v10-nav-logo-sub">Mudas tecnicamente produzidas</div>
+        </Link>
+        <div className="v10-nav-links">
+          {navLinks.map((l) => (
+            <Link key={l.href} href={l.href}>
+              {l.label}
+            </Link>
+          ))}
         </div>
-      </Link>
-      <div className="v10-nav-links">
+        <Link href="/contato" className="v10-nav-cta">
+          Fale Conosco →
+        </Link>
+        <button
+          className={`v10-nav-mobile-toggle ${open ? "open" : ""}`}
+          onClick={() => setOpen(!open)}
+          aria-label="Abrir menu"
+          aria-expanded={open}
+        >
+          <span /><span /><span />
+        </button>
+      </nav>
+
+      {/* Mobile sheet */}
+      <div
+        className={`v10-nav-mobile-backdrop ${open ? "open" : ""}`}
+        onClick={() => setOpen(false)}
+      />
+      <aside className={`v10-nav-mobile-sheet ${open ? "open" : ""}`}>
         {navLinks.map((l) => (
-          <Link key={l.href} href={l.href}>
+          <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
             {l.label}
           </Link>
         ))}
-      </div>
-      <Link href="/contato" className="v10-nav-cta">
-        Fale Conosco →
-      </Link>
-    </nav>
+        <Link
+          href="/contato"
+          className="v10-nav-cta-mobile"
+          onClick={() => setOpen(false)}
+        >
+          Fale Conosco →
+        </Link>
+      </aside>
+    </>
   );
 }
