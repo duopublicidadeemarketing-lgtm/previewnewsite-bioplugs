@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Manrope, Inter } from "next/font/google";
+import { Manrope, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { LenisProvider } from "@/components/providers/lenis-provider";
+import { ScrollRevealProvider } from "@/components/providers/scroll-reveal-provider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -12,21 +13,22 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Bioplugs — Mudas Tecnicamente Produzidas",
   description:
-    "Bioplugs produz mudas técnicas de floricultura com genética de breeders globais. Parceira oficial Selecta, Danziger, Sakata e Hilverdakooij. Atibaia, SP.",
+    "Bioplugs propaga em escala industrial as variedades dos maiores breeders globais — Selecta one, Danziger e Sakata. Genética certificada, exclusivamente B2B. Atibaia/SP.",
   openGraph: {
     title: "Bioplugs — Mudas Tecnicamente Produzidas",
     description:
-      "Produção técnica de mudas para produtores e floricultores profissionais. Parceira oficial dos principais breeders globais.",
+      "Genética certificada das maiores breeders do mundo, propagada com tecnologia em Atibaia/SP. Exclusivamente B2B.",
     locale: "pt_BR",
     type: "website",
   },
@@ -38,15 +40,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${manrope.variable} ${inter.variable} h-full`}
-    >
-      <body className="min-h-full flex flex-col bg-[--paper] text-[--ink] antialiased">
+    <html lang="pt-BR" className={`${manrope.variable} ${cormorant.variable}`}>
+      <body>
         <LenisProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <ScrollRevealProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </ScrollRevealProvider>
         </LenisProvider>
       </body>
     </html>

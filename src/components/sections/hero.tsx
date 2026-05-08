@@ -1,90 +1,96 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+const slides = [
+  {
+    img: "https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=2400&q=88&auto=format&fit=crop",
+    spec: "Dahlia hybrida · Selecta one",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=2400&q=88&auto=format&fit=crop",
+    spec: "Dianthus barbatus · Selecta one",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=2400&q=88&auto=format&fit=crop",
+    spec: "Gerbera jamesonii · Sakata",
+  },
+  {
+    img: "https://images.pexels.com/photos/33044/sunflower-sun-summer-yellow.jpg?auto=compress&w=2400",
+    spec: "Helianthus annuus · Danziger",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1597945233059-3a4d7d9fec38?w=2400&q=88&auto=format&fit=crop",
+    spec: "Petunia × hybrida · Danziger",
+  },
+];
 
 export function HeroSection() {
+  const [idx, setIdx] = useState(0);
+  const bgRef = useRef<HTMLDivElement>(null);
+  const specRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setIdx((i) => (i + 1) % slides.length);
+    }, 6500);
+    return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const bg = bgRef.current;
+    const spec = specRef.current;
+    if (!bg || !spec) return;
+    const s = slides[idx];
+    const im = new window.Image();
+    im.onload = () => {
+      bg.style.transition = "opacity 1.5s ease";
+      bg.style.opacity = "0";
+      spec.style.opacity = "0";
+      setTimeout(() => {
+        bg.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.55) 100%), url('${s.img}')`;
+        spec.textContent = s.spec;
+        bg.style.opacity = "1";
+        spec.style.opacity = "1";
+      }, 700);
+    };
+    im.src = s.img;
+  }, [idx]);
+
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=85"
-          alt="Campo de flores ornamentais — Bioplugs"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        {/* Gradient overlay — escurece mais à esquerda onde fica o texto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[--ink]/90 via-[--ink]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[--ink]/50 via-transparent to-transparent" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 py-32 sm:px-8 lg:px-16 pt-40">
-        <div className="max-w-2xl">
-          {/* Eyebrow */}
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[--brand-lime]">
-            Mudas Tecnicamente Produzidas
-          </p>
-
-          {/* Headline */}
-          <h1
-            className="text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Genética de<br />
-            breeders globais.<br />
-            <span className="text-[--brand-lime]">Resultado</span> entregue<br />
-            na sua estufa.
-          </h1>
-
-          {/* Subtitle */}
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-white/70 sm:text-lg">
-            Bioplugs produz mudas com método técnico e genética premium dos
-            principais breeders mundiais. Parceira oficial de Selecta, Danziger,
-            Sakata e Hilverdakooij. Atibaia, SP.
-          </p>
-
-          {/* CTAs */}
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/produtos"
-              className="inline-flex items-center justify-center rounded-full bg-[--brand-lime] px-8 py-4 text-sm font-semibold text-[--ink] transition-all hover:brightness-110 hover:scale-[1.02]"
-            >
-              Conhecer variedades →
-            </Link>
-            <Link
-              href="/contato"
-              className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
-            >
-              Falar com a equipe
-            </Link>
-          </div>
-
-          {/* Badges */}
-          <div className="mt-12 flex flex-wrap items-center gap-6">
-            <div className="text-center">
-              <span className="block text-3xl font-bold text-[--brand-lime]" style={{ fontFamily: "var(--font-display)" }}>38+</span>
-              <span className="text-xs uppercase tracking-widest text-white/50">Variedades</span>
-            </div>
-            <div className="h-8 w-px bg-white/20" />
-            <div className="text-center">
-              <span className="block text-3xl font-bold text-[--brand-lime]" style={{ fontFamily: "var(--font-display)" }}>4</span>
-              <span className="text-xs uppercase tracking-widest text-white/50">Breeders</span>
-            </div>
-            <div className="h-8 w-px bg-white/20" />
-            <div className="text-center">
-              <span className="block text-3xl font-bold text-[--brand-lime]" style={{ fontFamily: "var(--font-display)" }}>3</span>
-              <span className="text-xs uppercase tracking-widest text-white/50">Categorias</span>
-            </div>
-          </div>
+    <section className="v10-hero">
+      <div className="v10-hero-bg" ref={bgRef} />
+      <div className="v10-hero-content">
+        <div className="v10-hero-eyebrow">B2B · Atibaia, SP · Brasil</div>
+        <h1 className="v10-hero-title">
+          <span className="wr wr-1"><span>Mudas tecnicamente</span></span>
+          <br />
+          <span className="wr wr-2"><span>produzidas com</span></span>{" "}
+          <span className="wr wr-3"><span className="it">parceiros globais.</span></span>
+        </h1>
+        <p className="v10-hero-sub">
+          Genética certificada das maiores breeders do mundo, propagada com tecnologia de ponta em Atibaia/SP. Exclusivamente B2B.
+        </p>
+        <div className="v10-hero-actions">
+          <a href="#produtos" className="v10-btn v10-btn-primary">
+            Ver Catálogo <span className="arrow">→</span>
+          </a>
+          <a href="#empresa" className="v10-btn v10-btn-ghost">
+            Quem Somos
+          </a>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">Scroll</span>
-        <div className="h-10 w-px bg-gradient-to-b from-white/40 to-transparent" />
+      <div className="v10-hero-footer">
+        <div className="v10-hero-footer-spec" ref={specRef}>
+          {slides[0].spec}
+        </div>
+        <div className="v10-hero-footer-meta">
+          Catálogo 26 / 27 · 38 variedades
+        </div>
+      </div>
+      <div className="v10-hero-scroll">
+        <span>Scroll</span>
+        <span className="v10-hero-scroll-line" />
       </div>
     </section>
   );

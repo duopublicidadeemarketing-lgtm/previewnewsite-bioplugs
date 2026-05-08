@@ -8,20 +8,16 @@ export function initScrollReveal() {
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const el = entry.target as HTMLElement;
-          const delay = i * 80;
-          setTimeout(() => {
-            el.classList.add("is-visible");
-          }, delay);
-          observer.unobserve(el);
+          (entry.target as HTMLElement).classList.add("is-visible");
+          observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
   );
 
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => observer.observe(el));
   return observer;
 }

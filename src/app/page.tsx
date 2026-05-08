@@ -1,18 +1,21 @@
-import { ScrollRevealProvider } from "@/components/providers/scroll-reveal-provider";
 import { HeroSection } from "@/components/sections/hero";
 import { InstitucionalSection } from "@/components/sections/institucional";
-import { BreedersSection } from "@/components/sections/breeders";
 import { ProdutosPreviewSection } from "@/components/sections/produtos-preview";
+import { VarietiesSection } from "@/components/sections/varieties";
+import { BreedersSection } from "@/components/sections/breeders";
+import { ProcessSection } from "@/components/sections/process";
 import { CtaSegmentadoSection } from "@/components/sections/cta-segmentado";
 
 export default function HomePage() {
   return (
-    <ScrollRevealProvider>
+    <>
       <HeroSection />
       <InstitucionalSection />
-      <BreedersSection />
       <ProdutosPreviewSection />
+      <VarietiesSection />
+      <BreedersSection />
+      <ProcessSection />
       <CtaSegmentadoSection />
-    </ScrollRevealProvider>
+    </>
   );
 }

@@ -1,55 +1,63 @@
-import Link from "next/link";
-import { Container } from "@/components/primitives/container";
-import { SectionHeader } from "@/components/primitives/section-header";
-import { breeders } from "@/data/breeders";
+const breeders = [
+  {
+    flag: "🇩🇪 Alemanha",
+    name: "Selecta one",
+    country: "Stuttgart",
+    vars: "16 variedades",
+    desc: "Líder global em genética de Dianthus, Gerbera e plantas para vaso. Mais de 90 anos de inovação em melhoramento ornamental.",
+  },
+  {
+    flag: "🇮🇱 Israel",
+    name: "Danziger",
+    country: "Mishmar Hashiv'a",
+    vars: "17 variedades",
+    desc: "Inovação em flores de corte e vaso. Especialistas em Lisianthus, Petunia e Gypsophila com alta performance produtiva.",
+  },
+  {
+    flag: "🇯🇵 Japão",
+    name: "Sakata",
+    country: "Yokohama",
+    vars: "5 variedades",
+    desc: "Precisão japonesa em híbridos. Catálogo premium de Girassóis sem pólen e SunPatiens para climas tropicais.",
+  },
+];
 
 export function BreedersSection() {
   return (
-    <section className="bg-[--ink] py-24 md:py-32">
-      <Container>
-        <SectionHeader
-          label="02 — Breeders parceiros"
-          title="Genética de quem lidera o mundo."
-          subtitle="Representantes oficiais dos maiores programas de melhoramento genético floral do planeta."
-          light
-        />
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <section className="v10-breeders" id="parcerias">
+      <div className="v10-breeders-inner">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "4rem",
+            alignItems: "end",
+          }}
+          className="reveal"
+        >
+          <div>
+            <div className="v10-section-eyebrow">Parceiros globais</div>
+            <h2 className="v10-section-title">
+              Genética dos <span className="it">três continentes.</span>
+            </h2>
+          </div>
+          <p className="v10-section-sub">
+            Trabalhamos diretamente com Selecta one (Alemanha), Danziger (Israel) e Sakata (Japão) — os maiores breeders mundiais em flores ornamentais. Suas variedades chegam ao Brasil propagadas em escala pela Bioplugs.
+          </p>
+        </div>
+        <div className="v10-breeders-map reveal">Mapa global · em construção</div>
+        <div className="v10-breeder-cards reveal-stagger">
           {breeders.map((b) => (
-            <Link
-              key={b.slug}
-              href={`/parcerias/${b.slug}`}
-              className="reveal group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:bg-white/10 hover:border-[--brand-lime]/40"
-            >
-              {/* Bandeira + nome */}
-              <div className="mb-4 flex items-center gap-3">
-                <span className="text-3xl">{b.bandeira}</span>
-                <div>
-                  <p className="font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
-                    {b.nome}
-                  </p>
-                  <p className="text-xs text-white/40">{b.pais}</p>
-                </div>
-              </div>
-
-              {/* Descrição */}
-              <p className="text-sm leading-relaxed text-white/60 line-clamp-3">
-                {b.descricao}
-              </p>
-
-              {/* Link arrow */}
-              <span className="mt-4 block text-xs font-semibold text-[--brand-lime] transition-transform group-hover:translate-x-1">
-                Ver variedades →
-              </span>
-
-              {/* Accent bar bottom */}
-              <div
-                className="absolute bottom-0 left-0 h-0.5 w-0 bg-[--brand-lime] transition-all duration-500 group-hover:w-full"
-              />
-            </Link>
+            <div className="v10-bcard" key={b.name}>
+              <div className="v10-bcard-flag">{b.flag}</div>
+              <div className="v10-bcard-name">{b.name}</div>
+              <div className="v10-bcard-country">{b.country}</div>
+              <div className="v10-bcard-vars">{b.vars}</div>
+              <div className="v10-bcard-desc">{b.desc}</div>
+            </div>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
