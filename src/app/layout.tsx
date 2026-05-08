@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_FIRST_IMG =
-  "https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=1800&q=82&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=1200&q=75&auto=format&fit=crop";
 
 export default function RootLayout({
   children,
