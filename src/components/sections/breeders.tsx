@@ -1,3 +1,5 @@
+import { WorldMap } from "@/components/sections/world-map";
+
 const breeders = [
   {
     flag: "🇩🇪 Alemanha",
@@ -45,7 +47,9 @@ export function BreedersSection() {
             Trabalhamos diretamente com Selecta one (Alemanha), Danziger (Israel) e Sakata (Japão) — os maiores breeders mundiais em flores ornamentais. Suas variedades chegam ao Brasil propagadas em escala pela Bioplugs.
           </p>
         </div>
-        <div className="v10-breeders-map reveal">Mapa global · em construção</div>
+        <div className="v10-breeders-map reveal">
+          <WorldMap />
+        </div>
         <div className="v10-breeder-cards reveal-stagger">
           {breeders.map((b) => (
             <div className="v10-bcard" key={b.name}>
