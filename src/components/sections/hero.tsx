@@ -4,23 +4,23 @@ import { useEffect, useRef, useState } from "react";
 
 const slides = [
   {
-    img: "https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=2400&q=88&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=1800&q=82&auto=format&fit=crop",
     spec: "Dahlia hybrida · Selecta one",
   },
   {
-    img: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=2400&q=88&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=1800&q=82&auto=format&fit=crop",
     spec: "Dianthus barbatus · Selecta one",
   },
   {
-    img: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=2400&q=88&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=1800&q=82&auto=format&fit=crop",
     spec: "Gerbera jamesonii · Sakata",
   },
   {
-    img: "https://images.pexels.com/photos/33044/sunflower-sun-summer-yellow.jpg?auto=compress&w=2400",
+    img: "https://images.pexels.com/photos/33044/sunflower-sun-summer-yellow.jpg?auto=compress&w=1800",
     spec: "Helianthus annuus · Danziger",
   },
   {
-    img: "https://images.unsplash.com/photo-1597945233059-3a4d7d9fec38?w=2400&q=88&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1597945233059-3a4d7d9fec38?w=1800&q=82&auto=format&fit=crop",
     spec: "Petunia × hybrida · Danziger",
   },
 ];

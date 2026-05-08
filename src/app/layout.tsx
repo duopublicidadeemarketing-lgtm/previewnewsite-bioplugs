@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   },
 };
 
+const HERO_FIRST_IMG =
+  "https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=1800&q=82&auto=format&fit=crop";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +44,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${manrope.variable} ${cormorant.variable}`}>
+      <head>
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          rel="preload"
+          as="image"
+          href={HERO_FIRST_IMG}
+          fetchPriority="high"
+        />
+      </head>
       <body>
         <LenisProvider>
           <ScrollRevealProvider>
