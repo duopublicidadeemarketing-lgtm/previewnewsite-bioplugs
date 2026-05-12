@@ -70,8 +70,9 @@ export function WorldMap() {
       pts
         .filter((b) => !b.hq)
         .forEach((b, i) => {
-          const start = px["br"];
-          const end = px[b.id];
+          // Direção: breeder → Brasil (genética chega ao Brasil)
+          const start = px[b.id];
+          const end = px["br"];
           const midX = (start[0] + end[0]) / 2;
           const midY = (start[1] + end[1]) / 2 - 80;
           const pathD = `M${start[0]},${start[1]} Q${midX},${midY} ${end[0]},${end[1]}`;

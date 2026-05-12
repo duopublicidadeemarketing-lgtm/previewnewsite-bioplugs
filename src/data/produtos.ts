@@ -35,21 +35,19 @@ export interface Produto {
   meta: string; // ex.: "Selecta · Corte · Florescimento precoce"
 }
 
+// Fotos locais (servidas do edge Vercel) — carregamento instantâneo,
+// sem dependência de CDN externo. Cliente final substituirá por fotos
+// reais dos produtos quando entregar o material fotográfico.
 const PHOTO = {
-  dahlia: "https://images.unsplash.com/photo-1490750967868-88df5691cc7b?w=900&q=85&auto=format&fit=crop",
-  dianthus: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=900&q=85&auto=format&fit=crop",
-  gerbera: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=900&q=85&auto=format&fit=crop",
-  petunia: "https://images.unsplash.com/photo-1597945233059-3a4d7d9fec38?w=900&q=85&auto=format&fit=crop",
-  girassol: "https://images.pexels.com/photos/33044/sunflower-sun-summer-yellow.jpg?auto=compress&w=900",
+  dianthus: "/hero/dianthus.jpg",
+  gerbera: "/hero/gerbera.jpg",
+  girassol: "/hero/sunflower.jpg",
+  // Aliases mantidos pra compatibilidade com chamadas antigas
+  dahlia: "/hero/dianthus.jpg",
+  petunia: "/hero/gerbera.jpg",
 };
 
-const cycle = (
-  ...keys: (keyof typeof PHOTO)[]
-): string[] => keys.map((k) => PHOTO[k]);
-
-// Pool de fotos cicladas (sem repetir adjacentes)
-const photoPool = cycle("dianthus", "dahlia", "gerbera", "petunia", "girassol");
-
+const photoPool = [PHOTO.dianthus, PHOTO.gerbera, PHOTO.girassol];
 const photoFor = (i: number): string => photoPool[i % photoPool.length];
 
 // Helper para criar produto com defaults
