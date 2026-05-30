@@ -186,7 +186,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-piuma.jpg",
-    fotos: ["/products/corte-limonium-piuma.jpg"],
+    fotos: ["/products/corte-limonium-piuma.jpg", "/products/corte-limonium-piuma-2.jpg", "/products/corte-limonium-piuma-3.jpg"],
     meta: "Danziger · Corte · Florescimento medio",
   },
   {
@@ -208,7 +208,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-safora.jpg",
-    fotos: ["/products/corte-limonium-safora.jpg"],
+    fotos: ["/products/corte-limonium-safora.jpg", "/products/corte-limonium-safora-2.jpg"],
     meta: "Danziger · Corte · Florescimento medio",
   },
   {
@@ -318,7 +318,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-sinuet.jpg",
-    fotos: ["/products/corte-limonium-sinuet.jpg"],
+    fotos: ["/products/corte-limonium-sinuet.jpg", "/products/corte-limonium-sinuet-2.jpg", "/products/corte-limonium-sinuet-3.jpg", "/products/corte-limonium-sinuet-4.jpg"],
     meta: "Danziger · Corte · Florescimento lento",
   },
   {
