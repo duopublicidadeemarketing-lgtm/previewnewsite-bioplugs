@@ -8,7 +8,7 @@ export type Breeder = "selecta" | "danziger" | "sakata";
 export type Sazonalidade = "anual" | "bianual" | "perene";
 export type Vigor = "medio" | "alto" | "compacta";
 export type Florescimento = "precoce" | "medio" | "lento";
-export type Crescimento = "ereto" | "curvo" | "pendente";
+export type Crescimento = "ereto" | "curvo" | "pendente" | "compacto";
 export type TipoFlor = "simples" | "dupla";
 
 export interface Produto {
@@ -503,7 +503,7 @@ export const produtos: Produto[] = [
     familia: "Meena",
     florescimento: "precoce",
     vigor: "alto",
-    crescimento: "ereto",
+    crescimento: "compacto",
     tipoFlor: "dupla",
     cheiro: false,
     sazonalidade: "anual",
@@ -524,7 +524,7 @@ export const produtos: Produto[] = [
     familia: "Kisses",
     florescimento: "precoce",
     vigor: "alto",
-    crescimento: "ereto",
+    crescimento: "compacto",
     tipoFlor: "dupla",
     cheiro: true,
     sazonalidade: "anual",
@@ -545,7 +545,7 @@ export const produtos: Produto[] = [
     familia: "Diadeur",
     florescimento: "precoce",
     vigor: "alto",
-    crescimento: "ereto",
+    crescimento: "compacto",
     tipoFlor: "dupla",
     cheiro: true,
     sazonalidade: "anual",
@@ -566,7 +566,7 @@ export const produtos: Produto[] = [
     familia: "Oscar",
     florescimento: "precoce",
     vigor: "alto",
-    crescimento: "ereto",
+    crescimento: "compacto",
     tipoFlor: "dupla",
     cheiro: true,
     sazonalidade: "anual",
