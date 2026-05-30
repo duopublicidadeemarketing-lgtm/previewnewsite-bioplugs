@@ -28,6 +28,18 @@ const initial = (): FilterState => ({
   cheiro: new Set(),
 });
 
+// Teaser curto exibido no hover do card — primeira frase, max ~42 chars
+function shortHighlight(p: Produto): string {
+  const c = (p.caracteristica || "").trim();
+  if (!c) return `${p.vigor.charAt(0).toUpperCase()}${p.vigor.slice(1)} vigor`;
+  // Pega a primeira frase antes de ponto/dois-pontos
+  const first = c.split(/[.:;]/)[0].trim();
+  if (first.length <= 42) return first;
+  // Senão, corta no espaço mais próximo de 38 chars + reticências
+  const cut = first.slice(0, 38).split(" ").slice(0, -1).join(" ");
+  return cut + "…";
+}
+
 function Card({ p }: { p: Produto }) {
   const letter = p.breeder.charAt(0).toUpperCase();
   const breederBg =
@@ -50,7 +62,7 @@ function Card({ p }: { p: Produto }) {
           <span className="pcard-badge-letter">{letter}</span>
         </div>
         <div className="pcard-overlay">
-          <div className="pcard-overlay-text">{p.caracteristica}</div>
+          <div className="pcard-overlay-text">{shortHighlight(p)}</div>
           <div className="pcard-overlay-link">Ver detalhes →</div>
         </div>
       </div>
