@@ -802,7 +802,7 @@ export const produtos: Produto[] = [
     breeder: "sakata",
     categoria: "vaso",
     foto: "/products/vaso-petunia-supercal.jpg",
-    fotos: ["/products/vaso-petunia-supercal.jpg", "/products/vaso-petunia-supercal-2.jpg", "/products/vaso-petunia-supercal-3.jpg", "/products/vaso-petunia-supercal-4.jpg", "/products/vaso-petunia-supercal-5.jpg"],
+    fotos: ["/products/vaso-petunia-supercal.jpg", "/products/vaso-petunia-supercal-2.jpg"],
     meta: "Sakata · Vaso · Florescimento precoce",
   },
   {
