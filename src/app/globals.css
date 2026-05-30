@@ -641,7 +641,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .v10-nav.scrolled { padding: 0.85rem 1.25rem; }
   .v10-nav-links { display: none; }
   .v10-nav-cta { display: none; }
-  .v10-nav-mobile-toggle { display: flex; }
+  /* Nav: opaco no mobile pra hamburger ficar visível sobre qualquer hero */
+  .v10-nav { background: rgba(250, 250, 247, 0.96) !important; border-bottom: 1px solid var(--line); }
+  .v10-nav-mobile-toggle { display: flex !important; padding: 0.8rem; position: relative; z-index: 101; }
+  .v10-nav-mobile-toggle span { background: var(--ink); width: 24px; height: 2.5px; }
   .v10-nav-logo-img { height: 36px; }
   .v10-nav-logo-text { font-size: 0.95rem; }
   .v10-nav-logo-sub { font-size: 0.46rem; letter-spacing: 0.14em; }
