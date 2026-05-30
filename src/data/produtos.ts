@@ -1,7 +1,7 @@
 // ── Catálogo Bioplugs 26/27 — 38 variedades ──
-// Gerado automaticamente a partir de:
-//   produtosecaracteristicas/Caracteristica produtos - Catálogo 26&27 (1).xlsx
-// Fotos copiadas de "Fotos de produtos/" e otimizadas para 900px largura 4:5
+// Gerado automaticamente por gen-produtos.py a partir do XLSX oficial.
+// Família = nome real do produto (Barbatus, Beautical, Ray...)
+// Espécie = categoria botânica (Dianthus, Petunia, Gerbera...)
 
 export type Categoria = "corte" | "jardim" | "vaso";
 export type Breeder = "selecta" | "danziger" | "sakata";
@@ -13,8 +13,9 @@ export type TipoFlor = "simples" | "dupla";
 
 export interface Produto {
   slug: string;
-  especie: string;
-  familia: string;
+  nome: string;            // display name: "Petunia Beautical", "Dianthus Barbatus"
+  especie: string;         // gênero botânico: "Petunia"
+  familia: string;         // nome comercial: "Beautical"
   florescimento: Florescimento;
   vigor: Vigor;
   crescimento: Crescimento;
@@ -35,6 +36,7 @@ export interface Produto {
 export const produtos: Produto[] = [
   {
     slug: "corte-dianthus-barbatus",
+    nome: "Dianthus Barbatus",
     especie: "Dianthus",
     familia: "Barbatus",
     florescimento: "precoce",
@@ -55,6 +57,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-gerbera-standard",
+    nome: "Gerbera Standard",
     especie: "Gerbera",
     familia: "Standard",
     florescimento: "precoce",
@@ -74,7 +77,8 @@ export const produtos: Produto[] = [
     meta: "Selecta one · Corte · Florescimento precoce",
   },
   {
-    slug: "corte-girassol",
+    slug: "corte-girassol-girassol",
+    nome: "Girassol",
     especie: "Girassol",
     familia: "Girassol",
     florescimento: "precoce",
@@ -90,11 +94,12 @@ export const produtos: Produto[] = [
     diametroFlor: "14 cm",
     breeder: "danziger",
     categoria: "corte",
-    foto: "/products/corte-girassol.jpg",
+    foto: "/products/corte-girassol-girassol.jpg",
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
     slug: "corte-gypsophila-paniculata",
+    nome: "Gypsophila Paniculata",
     especie: "Gypsophila",
     familia: "Paniculata",
     florescimento: "medio",
@@ -115,6 +120,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-enchante",
+    nome: "Limonium Enchante",
     especie: "Limonium",
     familia: "Enchante",
     florescimento: "precoce",
@@ -135,6 +141,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-magnum",
+    nome: "Limonium Magnum",
     especie: "Limonium",
     familia: "Magnum",
     florescimento: "precoce",
@@ -155,6 +162,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-piuma",
+    nome: "Limonium Piuma",
     especie: "Limonium",
     familia: "Piuma",
     florescimento: "medio",
@@ -175,6 +183,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-safora",
+    nome: "Limonium Safora",
     especie: "Limonium",
     familia: "Safora",
     florescimento: "medio",
@@ -195,6 +204,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-sensy",
+    nome: "Limonium Sensy",
     especie: "Limonium",
     familia: "Sensy",
     florescimento: "precoce",
@@ -215,6 +225,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-sinuatum",
+    nome: "Limonium Sinuatum",
     especie: "Limonium",
     familia: "Sinuatum",
     florescimento: "precoce",
@@ -235,6 +246,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-supreme",
+    nome: "Limonium Supreme",
     especie: "Limonium",
     familia: "Supreme",
     florescimento: "precoce",
@@ -255,6 +267,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-splendid",
+    nome: "Limonium Splendid",
     especie: "Limonium",
     familia: "Splendid",
     florescimento: "precoce",
@@ -275,6 +288,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-sinuet",
+    nome: "Limonium Sinuet",
     especie: "Limonium",
     familia: "Sinuet",
     florescimento: "lento",
@@ -295,6 +309,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-limonium-superta",
+    nome: "Limonium Superta",
     especie: "Limonium",
     familia: "Superta",
     florescimento: "precoce",
@@ -315,6 +330,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-sorghum-prairie",
+    nome: "Sorghum Prairie",
     especie: "Sorghum",
     familia: "Prairie",
     florescimento: "precoce",
@@ -335,6 +351,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-carnation-sweeties",
+    nome: "Carnation Sweeties",
     especie: "Carnation",
     familia: "Sweeties",
     florescimento: "precoce",
@@ -355,6 +372,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "jardim-begonia-viking",
+    nome: "Begonia Viking",
     especie: "Begonia",
     familia: "Viking",
     florescimento: "precoce",
@@ -375,6 +393,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "jardim-sunpatiens-compact",
+    nome: "Sunpatiens Compact",
     especie: "Sunpatiens",
     familia: "Compact",
     florescimento: "precoce",
@@ -395,6 +414,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "jardim-sunpatiens-vigorous",
+    nome: "Sunpatiens Vigorous",
     especie: "Sunpatiens",
     familia: "Vigorous",
     florescimento: "precoce",
@@ -415,6 +435,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-calibrachoa-colibri",
+    nome: "Calibrachoa Colibri",
     especie: "Calibrachoa",
     familia: "Colibri",
     florescimento: "precoce",
@@ -435,6 +456,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-calibrachoa-ombre",
+    nome: "Calibrachoa Ombre",
     especie: "Calibrachoa",
     familia: "Ombre",
     florescimento: "precoce",
@@ -455,6 +477,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-calibrachoa-uno",
+    nome: "Calibrachoa Uno",
     especie: "Calibrachoa",
     familia: "Uno",
     florescimento: "precoce",
@@ -475,6 +498,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-dahlia-meena",
+    nome: "Dahlia Meena",
     especie: "Dahlia",
     familia: "Meena",
     florescimento: "precoce",
@@ -495,6 +519,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-dianthus-kisses",
+    nome: "Dianthus Kisses",
     especie: "Dianthus",
     familia: "Kisses",
     florescimento: "precoce",
@@ -515,6 +540,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-dianthus-diadeur",
+    nome: "Dianthus Diadeur",
     especie: "Dianthus",
     familia: "Diadeur",
     florescimento: "precoce",
@@ -535,6 +561,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-dianthus-oscar",
+    nome: "Dianthus Oscar",
     especie: "Dianthus",
     familia: "Oscar",
     florescimento: "precoce",
@@ -555,6 +582,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-dipladenia-uni",
+    nome: "Dipladenia Uni",
     especie: "Dipladenia",
     familia: "Uni",
     florescimento: "precoce",
@@ -575,6 +603,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-geranio-moonlight",
+    nome: "Geranio Moonlight",
     especie: "Geranio",
     familia: "Moonlight",
     florescimento: "precoce",
@@ -595,6 +624,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-geranio-royal",
+    nome: "Geranio Royal",
     especie: "Geranio",
     familia: "Royal",
     florescimento: "precoce",
@@ -615,6 +645,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-geranio-sunrise",
+    nome: "Geranio Sunrise",
     especie: "Geranio",
     familia: "Sunrise",
     florescimento: "precoce",
@@ -635,6 +666,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-geranio-tumbao",
+    nome: "Geranio Tumbao",
     especie: "Geranio",
     familia: "Tumbao",
     florescimento: "precoce",
@@ -655,6 +687,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-petunia-amore",
+    nome: "Petunia Amore",
     especie: "Petunia",
     familia: "Amore",
     florescimento: "precoce",
@@ -675,6 +708,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-petunia-cascadia",
+    nome: "Petunia Cascadia",
     especie: "Petunia",
     familia: "Cascadia",
     florescimento: "precoce",
@@ -695,6 +729,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-petunia-capella",
+    nome: "Petunia Capella",
     especie: "Petunia",
     familia: "Capella",
     florescimento: "precoce",
@@ -715,6 +750,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-petunia-supercal",
+    nome: "Petunia Supercal",
     especie: "Petunia",
     familia: "Supercal",
     florescimento: "precoce",
@@ -735,6 +771,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-petunia-beautical",
+    nome: "Petunia Beautical",
     especie: "Petunia",
     familia: "Beautical",
     florescimento: "precoce",
@@ -755,6 +792,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-petunia-ray",
+    nome: "Petunia Ray",
     especie: "Petunia",
     familia: "Ray",
     florescimento: "precoce",
@@ -775,6 +813,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "vaso-petunia-sky",
+    nome: "Petunia Sky",
     especie: "Petunia",
     familia: "Sky",
     florescimento: "precoce",

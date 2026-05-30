@@ -71,7 +71,7 @@ export function ProdutoDetalhe({ p }: { p: Produto }) {
         <span className="sep">/</span>
         <Link href={`/produtos?categoria=${p.categoria}`}>{cap(p.categoria)}</Link>
         <span className="sep">/</span>
-        <span className="current">{p.especie}</span>
+        <span className="current">{p.nome}</span>
       </nav>
 
       <section className="pdet-hero">
@@ -108,8 +108,8 @@ export function ProdutoDetalhe({ p }: { p: Produto }) {
 
         <div>
           <div className="pdet-info-eyebrow">Variedade · Catálogo 26/27</div>
-          <h1 className="pdet-info-title">{p.especie}</h1>
-          <div className="pdet-info-common">{p.familia}</div>
+          <h1 className="pdet-info-title">{p.nome}</h1>
+          <div className="pdet-info-common">{p.especie} · {p.familia}</div>
           <div className="pdet-tags">
             <span className="pdet-tag pdet-tag-breeder">
               {breederFlag(p.breeder)} {breederLabel(p.breeder)}
@@ -178,7 +178,7 @@ export function ProdutoDetalhe({ p }: { p: Produto }) {
             Quero esta <span className="it">variedade.</span>
           </h2>
           <p>
-            Solicite orçamento técnico para {p.especie}. Atendimento exclusivo a produtores e floricultores profissionais. Consulte safra disponível e MOQ para sua região.
+            Solicite orçamento técnico para {p.nome}. Atendimento exclusivo a produtores e floricultores profissionais. Consulte safra disponível e MOQ para sua região.
           </p>
         </div>
         <div className="pdet-cta-row" style={{ marginBottom: 0 }}>

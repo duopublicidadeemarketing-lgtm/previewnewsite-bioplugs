@@ -13,8 +13,8 @@ export async function generateMetadata(props: {
   const p = findProduto(slug);
   if (!p) return { title: "Produto não encontrado · Bioplugs" };
   return {
-    title: `${p.especie} · Bioplugs`,
-    description: `${p.caracteristica}. Genética ${breederLabel(p.breeder)} propagada com tecnologia em Atibaia/SP. Catálogo 26/27.`,
+    title: `${p.nome} · Bioplugs`,
+    description: `${p.caracteristica.slice(0, 160)}. Genética ${breederLabel(p.breeder)} propagada com tecnologia em Atibaia/SP. Catálogo 26/27.`,
   };
 }
 

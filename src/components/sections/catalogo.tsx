@@ -67,7 +67,7 @@ function Card({ p }: { p: Produto }) {
         </div>
       </div>
       <div className="pcard-body">
-        <div className="pcard-name">{p.especie}</div>
+        <div className="pcard-name">{p.nome}</div>
         <div className="pcard-meta">{p.meta}</div>
       </div>
     </Link>
