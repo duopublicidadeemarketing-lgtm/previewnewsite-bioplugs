@@ -29,7 +29,8 @@ export interface Produto {
   diametroFlor: string;
   breeder: Breeder;
   categoria: Categoria;
-  foto: string;
+  foto: string;        // primária (mesma que fotos[0]) — compat
+  fotos: string[];     // galeria completa do produto (1-5 fotos)
   meta: string;
 }
 
@@ -53,6 +54,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "corte",
     foto: "/products/corte-dianthus-barbatus.jpg",
+    fotos: ["/products/corte-dianthus-barbatus.jpg", "/products/corte-dianthus-barbatus-2.jpg"],
     meta: "Selecta one · Corte · Florescimento precoce",
   },
   {
@@ -74,6 +76,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "corte",
     foto: "/products/corte-gerbera-standard.jpg",
+    fotos: ["/products/corte-gerbera-standard.jpg", "/products/corte-gerbera-standard-2.jpg", "/products/corte-gerbera-standard-3.jpg", "/products/corte-gerbera-standard-4.jpg", "/products/corte-gerbera-standard-5.jpg"],
     meta: "Selecta one · Corte · Florescimento precoce",
   },
   {
@@ -95,6 +98,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-girassol-girassol.jpg",
+    fotos: ["/products/corte-girassol-girassol.jpg", "/products/corte-girassol-girassol-2.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -116,6 +120,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "corte",
     foto: "/products/corte-gypsophila-paniculata.jpg",
+    fotos: ["/products/corte-gypsophila-paniculata.jpg", "/products/corte-gypsophila-paniculata-2.jpg", "/products/corte-gypsophila-paniculata-3.jpg", "/products/corte-gypsophila-paniculata-4.jpg", "/products/corte-gypsophila-paniculata-5.jpg"],
     meta: "Selecta one · Corte · Florescimento medio",
   },
   {
@@ -137,6 +142,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-enchante.jpg",
+    fotos: ["/products/corte-limonium-enchante.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -158,6 +164,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-magnum.jpg",
+    fotos: ["/products/corte-limonium-magnum.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -179,6 +186,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-piuma.jpg",
+    fotos: ["/products/corte-limonium-piuma.jpg"],
     meta: "Danziger · Corte · Florescimento medio",
   },
   {
@@ -200,6 +208,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-safora.jpg",
+    fotos: ["/products/corte-limonium-safora.jpg"],
     meta: "Danziger · Corte · Florescimento medio",
   },
   {
@@ -221,6 +230,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-sensy.jpg",
+    fotos: ["/products/corte-limonium-sensy.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -242,6 +252,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-sinuatum.jpg",
+    fotos: ["/products/corte-limonium-sinuatum.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -263,6 +274,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-supreme.jpg",
+    fotos: ["/products/corte-limonium-supreme.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -284,6 +296,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-splendid.jpg",
+    fotos: ["/products/corte-limonium-splendid.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -305,6 +318,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-sinuet.jpg",
+    fotos: ["/products/corte-limonium-sinuet.jpg"],
     meta: "Danziger · Corte · Florescimento lento",
   },
   {
@@ -326,6 +340,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-limonium-superta.jpg",
+    fotos: ["/products/corte-limonium-superta.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -347,6 +362,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "corte",
     foto: "/products/corte-sorghum-prairie.jpg",
+    fotos: ["/products/corte-sorghum-prairie.jpg", "/products/corte-sorghum-prairie-2.jpg", "/products/corte-sorghum-prairie-3.jpg", "/products/corte-sorghum-prairie-4.jpg", "/products/corte-sorghum-prairie-5.jpg"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
   {
@@ -368,6 +384,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "corte",
     foto: "/products/corte-carnation-sweeties.jpg",
+    fotos: ["/products/corte-carnation-sweeties.jpg"],
     meta: "Selecta one · Corte · Florescimento precoce",
   },
   {
@@ -389,6 +406,7 @@ export const produtos: Produto[] = [
     breeder: "sakata",
     categoria: "jardim",
     foto: "/products/jardim-begonia-viking.jpg",
+    fotos: ["/products/jardim-begonia-viking.jpg", "/products/jardim-begonia-viking-2.jpg", "/products/jardim-begonia-viking-3.jpg", "/products/jardim-begonia-viking-4.jpg", "/products/jardim-begonia-viking-5.jpg"],
     meta: "Sakata · Jardim · Florescimento precoce",
   },
   {
@@ -410,6 +428,7 @@ export const produtos: Produto[] = [
     breeder: "sakata",
     categoria: "jardim",
     foto: "/products/jardim-sunpatiens-compact.jpg",
+    fotos: ["/products/jardim-sunpatiens-compact.jpg"],
     meta: "Sakata · Jardim · Florescimento precoce",
   },
   {
@@ -431,6 +450,7 @@ export const produtos: Produto[] = [
     breeder: "sakata",
     categoria: "jardim",
     foto: "/products/jardim-sunpatiens-vigorous.jpg",
+    fotos: ["/products/jardim-sunpatiens-vigorous.jpg"],
     meta: "Sakata · Jardim · Florescimento precoce",
   },
   {
@@ -452,6 +472,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-colibri.jpg",
+    fotos: ["/products/vaso-calibrachoa-colibri.jpg"],
     meta: "Danziger · Vaso · Florescimento precoce",
   },
   {
@@ -473,6 +494,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-ombre.jpg",
+    fotos: ["/products/vaso-calibrachoa-ombre.jpg", "/products/vaso-calibrachoa-ombre-2.jpg", "/products/vaso-calibrachoa-ombre-3.jpg", "/products/vaso-calibrachoa-ombre-4.jpg", "/products/vaso-calibrachoa-ombre-5.jpg"],
     meta: "Danziger · Vaso · Florescimento precoce",
   },
   {
@@ -494,6 +516,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-uno.jpg",
+    fotos: ["/products/vaso-calibrachoa-uno.jpg", "/products/vaso-calibrachoa-uno-2.jpg", "/products/vaso-calibrachoa-uno-3.jpg", "/products/vaso-calibrachoa-uno-4.jpg", "/products/vaso-calibrachoa-uno-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -515,6 +538,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-dahlia-meena.jpg",
+    fotos: ["/products/vaso-dahlia-meena.jpg", "/products/vaso-dahlia-meena-2.jpg", "/products/vaso-dahlia-meena-3.jpg", "/products/vaso-dahlia-meena-4.jpg", "/products/vaso-dahlia-meena-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -536,6 +560,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-dianthus-kisses.jpg",
+    fotos: ["/products/vaso-dianthus-kisses.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -557,6 +582,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-dianthus-diadeur.jpg",
+    fotos: ["/products/vaso-dianthus-diadeur.jpg", "/products/vaso-dianthus-diadeur-2.jpg", "/products/vaso-dianthus-diadeur-3.jpg", "/products/vaso-dianthus-diadeur-4.jpg", "/products/vaso-dianthus-diadeur-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -578,6 +604,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-dianthus-oscar.jpg",
+    fotos: ["/products/vaso-dianthus-oscar.jpg", "/products/vaso-dianthus-oscar-2.jpg", "/products/vaso-dianthus-oscar-3.jpg", "/products/vaso-dianthus-oscar-4.jpg", "/products/vaso-dianthus-oscar-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -599,6 +626,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-dipladenia-uni.jpg",
+    fotos: ["/products/vaso-dipladenia-uni.jpg", "/products/vaso-dipladenia-uni-2.jpg", "/products/vaso-dipladenia-uni-3.jpg", "/products/vaso-dipladenia-uni-4.jpg", "/products/vaso-dipladenia-uni-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -620,6 +648,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-geranio-moonlight.jpg",
+    fotos: ["/products/vaso-geranio-moonlight.jpg", "/products/vaso-geranio-moonlight-2.jpg", "/products/vaso-geranio-moonlight-3.jpg", "/products/vaso-geranio-moonlight-4.jpg", "/products/vaso-geranio-moonlight-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -641,6 +670,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-geranio-royal.jpg",
+    fotos: ["/products/vaso-geranio-royal.jpg", "/products/vaso-geranio-royal-2.jpg", "/products/vaso-geranio-royal-3.jpg", "/products/vaso-geranio-royal-4.jpg", "/products/vaso-geranio-royal-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -662,6 +692,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-geranio-sunrise.jpg",
+    fotos: ["/products/vaso-geranio-sunrise.jpg", "/products/vaso-geranio-sunrise-2.jpg", "/products/vaso-geranio-sunrise-3.jpg", "/products/vaso-geranio-sunrise-4.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -683,6 +714,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-geranio-tumbao.jpg",
+    fotos: ["/products/vaso-geranio-tumbao.jpg", "/products/vaso-geranio-tumbao-2.jpg", "/products/vaso-geranio-tumbao-3.jpg", "/products/vaso-geranio-tumbao-4.jpg", "/products/vaso-geranio-tumbao-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -704,6 +736,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-petunia-amore.jpg",
+    fotos: ["/products/vaso-petunia-amore.jpg", "/products/vaso-petunia-amore-2.jpg", "/products/vaso-petunia-amore-3.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
   {
@@ -725,6 +758,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "vaso",
     foto: "/products/vaso-petunia-cascadia.jpg",
+    fotos: ["/products/vaso-petunia-cascadia.jpg", "/products/vaso-petunia-cascadia-2.jpg", "/products/vaso-petunia-cascadia-3.jpg", "/products/vaso-petunia-cascadia-4.jpg", "/products/vaso-petunia-cascadia-5.jpg"],
     meta: "Danziger · Vaso · Florescimento precoce",
   },
   {
@@ -746,6 +780,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "vaso",
     foto: "/products/vaso-petunia-capella.jpg",
+    fotos: ["/products/vaso-petunia-capella.jpg", "/products/vaso-petunia-capella-2.jpg", "/products/vaso-petunia-capella-3.jpg", "/products/vaso-petunia-capella-4.jpg"],
     meta: "Danziger · Vaso · Florescimento precoce",
   },
   {
@@ -767,6 +802,7 @@ export const produtos: Produto[] = [
     breeder: "sakata",
     categoria: "vaso",
     foto: "/products/vaso-petunia-supercal.jpg",
+    fotos: ["/products/vaso-petunia-supercal.jpg", "/products/vaso-petunia-supercal-2.jpg", "/products/vaso-petunia-supercal-3.jpg", "/products/vaso-petunia-supercal-4.jpg", "/products/vaso-petunia-supercal-5.jpg"],
     meta: "Sakata · Vaso · Florescimento precoce",
   },
   {
@@ -788,6 +824,7 @@ export const produtos: Produto[] = [
     breeder: "sakata",
     categoria: "vaso",
     foto: "/products/vaso-petunia-beautical.jpg",
+    fotos: ["/products/vaso-petunia-beautical.jpg", "/products/vaso-petunia-beautical-2.jpg", "/products/vaso-petunia-beautical-3.jpg", "/products/vaso-petunia-beautical-4.jpg", "/products/vaso-petunia-beautical-5.jpg"],
     meta: "Sakata · Vaso · Florescimento precoce",
   },
   {
@@ -809,6 +846,7 @@ export const produtos: Produto[] = [
     breeder: "danziger",
     categoria: "vaso",
     foto: "/products/vaso-petunia-ray.jpg",
+    fotos: ["/products/vaso-petunia-ray.jpg", "/products/vaso-petunia-ray-2.jpg", "/products/vaso-petunia-ray-3.jpg"],
     meta: "Danziger · Vaso · Florescimento precoce",
   },
   {
@@ -830,6 +868,7 @@ export const produtos: Produto[] = [
     breeder: "selecta",
     categoria: "vaso",
     foto: "/products/vaso-petunia-sky.jpg",
+    fotos: ["/products/vaso-petunia-sky.jpg", "/products/vaso-petunia-sky-2.jpg", "/products/vaso-petunia-sky-3.jpg", "/products/vaso-petunia-sky-4.jpg", "/products/vaso-petunia-sky-5.jpg"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
 ];

@@ -6,7 +6,6 @@ import {
   type Produto,
   breederLabel,
   breederFlag,
-  produtos as ALL,
 } from "@/data/produtos";
 
 const ICONS = {
@@ -59,9 +58,8 @@ const ICONS = {
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 export function ProdutoDetalhe({ p }: { p: Produto }) {
-  // Galeria: foto principal + 4 outras (ciclando do catálogo)
-  const others = ALL.filter((o) => o.slug !== p.slug && o.categoria === p.categoria).slice(0, 4);
-  const allPhotos = [p.foto, ...others.map((o) => o.foto)];
+  // Galeria: usa o array de fotos do PRÓPRIO produto (1-5 fotos)
+  const allPhotos = p.fotos && p.fotos.length > 0 ? p.fotos : [p.foto];
   const [active, setActive] = useState(0);
 
   return (
