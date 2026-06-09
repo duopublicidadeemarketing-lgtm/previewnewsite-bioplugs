@@ -33,6 +33,7 @@ export interface Produto {
   categoria: Categoria;
   foto: string;             // foto primária (mesma que fotos[0])
   fotos: string[];          // galeria geral do produto
+  fotoBadge: string;        // foto closeup pra badge circular no card do catalogo
   cultivares: string[];     // nomes das variedades do XLSX
   cultivaresFotos?: Record<string, string[]>; // foto-por-cultivar (opcional)
   meta: string;
@@ -60,6 +61,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-carnation-sweeties-mm-238-1.jpg",
     fotos: ["/products/corte-carnation-sweeties-mm-238-1.jpg", "/products/corte-carnation-sweeties-mm-29-1.jpg"],
+    fotoBadge: "/products/corte-carnation-sweeties-badge.jpg",
     cultivares: ["MM 238", "MM 80", "MM 153", "MM 29", "DCC-2021-1946", "MM 22", "MM 210", "MM 73", "MM 67", "MM 248", "DCC-2021-1951", "MM 92", "MM 426"],
     cultivaresFotos: {
       "MM 238": ["/products/corte-carnation-sweeties-mm-238-1.jpg"],
@@ -87,6 +89,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-dianthus-barbatus-1.jpg",
     fotos: ["/products/corte-dianthus-barbatus-1.jpg", "/products/corte-dianthus-barbatus-2.jpg", "/products/corte-dianthus-barbatus-3.jpg", "/products/corte-dianthus-barbatus-4.jpg", "/products/corte-dianthus-barbatus-5.jpg", "/products/corte-dianthus-barbatus-6.jpg"],
+    fotoBadge: "/products/corte-dianthus-barbatus-badge.jpg",
     cultivares: ["KIWI MELLOW", "LADY INGREEN", "KIWI MOSS"],
     meta: "Selecta one · Corte · Florescimento precoce",
   },
@@ -110,6 +113,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-gerbera-standard-laranja-puro-1.jpg",
     fotos: ["/products/corte-gerbera-standard-laranja-puro-1.jpg", "/products/corte-gerbera-standard-candela-1.jpg", "/products/corte-gerbera-standard-marinilla-1.jpg", "/products/corte-gerbera-standard-kabu-1.jpg", "/products/corte-gerbera-standard-natasha-1.jpg", "/products/corte-gerbera-standard-vera-1.jpg", "/products/corte-gerbera-standard-prince-1.jpg", "/products/corte-gerbera-standard-amlet-1.jpg"],
+    fotoBadge: "/products/corte-gerbera-standard-badge.jpg",
     cultivares: ["LARANJA PURO", "CANDELA", "MARINILLA", "KABU", "NATASHA", "VERA", "PRINCE", "AMLET", "TOSCANA", "PIA", "UPALA", "FLORENCIA", "RIONEGRO", "BOLIVAR", "FLOELLA", "TERESA", "BEATRIZ", "17014"],
     cultivaresFotos: {
       "LARANJA PURO": ["/products/corte-gerbera-standard-laranja-puro-1.jpg", "/products/corte-gerbera-standard-laranja-puro-2.jpg"],
@@ -153,6 +157,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-girassol-girassol-1.jpg",
     fotos: ["/products/corte-girassol-girassol-1.jpg", "/products/corte-girassol-girassol-2.jpg", "/products/corte-girassol-girassol-3.jpg", "/products/corte-girassol-girassol-4.jpg"],
+    fotoBadge: "/products/corte-girassol-girassol-badge.jpg",
     cultivares: ["NEW OMRI SUPREME"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
@@ -176,6 +181,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-gypsophila-paniculata-dreamtastic-1.jpg",
     fotos: ["/products/corte-gypsophila-paniculata-dreamtastic-1.jpg"],
+    fotoBadge: "/products/corte-gypsophila-paniculata-badge.jpg",
     cultivares: ["DREAMTASTIC", "PEARLS BLOSSOM"],
     cultivaresFotos: {
       "DREAMTASTIC": ["/products/corte-gypsophila-paniculata-dreamtastic-1.jpg", "/products/corte-gypsophila-paniculata-dreamtastic-2.jpg", "/products/corte-gypsophila-paniculata-dreamtastic-3.jpg", "/products/corte-gypsophila-paniculata-dreamtastic-4.jpg"],
@@ -202,6 +208,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-enchante-1.jpg",
     fotos: ["/products/corte-limonium-enchante-1.jpg", "/products/corte-limonium-enchante-2.jpg", "/products/corte-limonium-enchante-3.jpg", "/products/corte-limonium-enchante-4.jpg", "/products/corte-limonium-enchante-5.jpg", "/products/corte-limonium-enchante-6.jpg", "/products/corte-limonium-enchante-7.jpg", "/products/corte-limonium-enchante-8.jpg"],
+    fotoBadge: "/products/corte-limonium-enchante-badge.jpg",
     cultivares: ["ENCHANTE"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
@@ -225,6 +232,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-magnum-1.jpg",
     fotos: ["/products/corte-limonium-magnum-1.jpg", "/products/corte-limonium-magnum-2.jpg", "/products/corte-limonium-magnum-3.jpg", "/products/corte-limonium-magnum-4.jpg"],
+    fotoBadge: "/products/corte-limonium-magnum-badge.jpg",
     cultivares: ["BLUE"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
@@ -248,6 +256,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-piuma-dark-blue-1.jpg",
     fotos: ["/products/corte-limonium-piuma-dark-blue-1.jpg", "/products/corte-limonium-piuma-sky-1.jpg"],
+    fotoBadge: "/products/corte-limonium-piuma-badge.jpg",
     cultivares: ["DARK BLUE", "PINK TOUCH", "SKY"],
     cultivaresFotos: {
       "DARK BLUE": ["/products/corte-limonium-piuma-dark-blue-1.jpg", "/products/corte-limonium-piuma-dark-blue-2.jpg", "/products/corte-limonium-piuma-dark-blue-3.jpg", "/products/corte-limonium-piuma-dark-blue-4.jpg"],
@@ -275,6 +284,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-safora-blue-tiful-1.jpg",
     fotos: ["/products/corte-limonium-safora-blue-tiful-1.jpg", "/products/corte-limonium-safora-classic-blue-1.jpg", "/products/corte-limonium-safora-dark-blue-1.jpg", "/products/corte-limonium-safora-light-blue-1.jpg", "/products/corte-limonium-safora-lilac-1.jpg", "/products/corte-limonium-safora-oshi-pink-1.jpg"],
+    fotoBadge: "/products/corte-limonium-safora-badge.jpg",
     cultivares: ["BLUE TIFUL", "CLASSIC BLUE", "DARK BLUE", "LIGHT BLUE", "LILAC", "OSHI PINK"],
     cultivaresFotos: {
       "BLUE TIFUL": ["/products/corte-limonium-safora-blue-tiful-1.jpg", "/products/corte-limonium-safora-blue-tiful-2.jpg", "/products/corte-limonium-safora-blue-tiful-3.jpg", "/products/corte-limonium-safora-blue-tiful-4.jpg"],
@@ -306,6 +316,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-sensy-nectarine-1.jpg",
     fotos: ["/products/corte-limonium-sensy-nectarine-1.jpg", "/products/corte-limonium-sensy-pinacolada-1.jpg", "/products/corte-limonium-sensy-pink-beauty-1.jpg", "/products/corte-limonium-sensy-tip-top-1.jpg"],
+    fotoBadge: "/products/corte-limonium-sensy-badge.jpg",
     cultivares: ["NECTARINE", "PINACOLADA", "PINK BEAUTY", "TIP-TOP"],
     cultivaresFotos: {
       "NECTARINE": ["/products/corte-limonium-sensy-nectarine-1.jpg", "/products/corte-limonium-sensy-nectarine-2.jpg", "/products/corte-limonium-sensy-nectarine-3.jpg", "/products/corte-limonium-sensy-nectarine-4.jpg"],
@@ -335,6 +346,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-sinuatum-white-delight-1.jpg",
     fotos: ["/products/corte-limonium-sinuatum-white-delight-1.jpg"],
+    fotoBadge: "/products/corte-limonium-sinuatum-badge.jpg",
     cultivares: ["LAVENDER", "NOIR TL", "WHITE DELIGHT"],
     cultivaresFotos: {
       "WHITE DELIGHT": ["/products/corte-limonium-sinuatum-white-delight-1.jpg"],
@@ -361,6 +373,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-sinuet-blue-impulse-1.jpg",
     fotos: ["/products/corte-limonium-sinuet-blue-impulse-1.jpg", "/products/corte-limonium-sinuet-eternal-pink-1.jpg", "/products/corte-limonium-sinuet-honey-apricot-1.jpg", "/products/corte-limonium-sinuet-max-yellow-1.jpg", "/products/corte-limonium-sinuet-orizon-pink-1.jpg", "/products/corte-limonium-sinuet-orizon-violet-1.jpg", "/products/corte-limonium-sinuet-up-pink-1.jpg"],
+    fotoBadge: "/products/corte-limonium-sinuet-badge.jpg",
     cultivares: ["BLUE IMPULSE", "ETERNAL PINK", "HONEY APRICOT", "MAX YELLOW", "ORIZON PINK", "ORIZON VIOLET", "UP PINK"],
     cultivaresFotos: {
       "BLUE IMPULSE": ["/products/corte-limonium-sinuet-blue-impulse-1.jpg", "/products/corte-limonium-sinuet-blue-impulse-2.jpg"],
@@ -393,6 +406,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-splendid-1.jpg",
     fotos: ["/products/corte-limonium-splendid-1.jpg", "/products/corte-limonium-splendid-2.jpg", "/products/corte-limonium-splendid-3.jpg", "/products/corte-limonium-splendid-4.jpg", "/products/corte-limonium-splendid-5.jpg"],
+    fotoBadge: "/products/corte-limonium-splendid-badge.jpg",
     cultivares: ["BLUE"],
     meta: "Danziger · Corte · Florescimento precoce",
   },
@@ -416,6 +430,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-superta-dark-blue-1.jpg",
     fotos: ["/products/corte-limonium-superta-dark-blue-1.jpg", "/products/corte-limonium-superta-purple-1.jpg", "/products/corte-limonium-superta-vermilinon-1.jpg"],
+    fotoBadge: "/products/corte-limonium-superta-badge.jpg",
     cultivares: ["DARK BLUE", "PURPLE", "VERMILINON"],
     cultivaresFotos: {
       "DARK BLUE": ["/products/corte-limonium-superta-dark-blue-1.jpg", "/products/corte-limonium-superta-dark-blue-2.jpg", "/products/corte-limonium-superta-dark-blue-3.jpg"],
@@ -444,6 +459,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-limonium-supreme-bluenight-1.jpg",
     fotos: ["/products/corte-limonium-supreme-bluenight-1.jpg", "/products/corte-limonium-supreme-whitelight-1.jpg"],
+    fotoBadge: "/products/corte-limonium-supreme-badge.jpg",
     cultivares: ["BLUENIGHT", "WHITELIGHT"],
     cultivaresFotos: {
       "BLUENIGHT": ["/products/corte-limonium-supreme-bluenight-1.jpg", "/products/corte-limonium-supreme-bluenight-2.jpg", "/products/corte-limonium-supreme-bluenight-3.jpg", "/products/corte-limonium-supreme-bluenight-4.jpg"],
@@ -471,6 +487,7 @@ export const produtos: Produto[] = [
     categoria: "corte",
     foto: "/products/corte-sorghum-prairie-pearls-orange-1.jpg",
     fotos: ["/products/corte-sorghum-prairie-pearls-orange-1.jpg", "/products/corte-sorghum-prairie-pearls-bronze-1.jpg", "/products/corte-sorghum-prairie-pearls-white-1.jpg", "/products/corte-sorghum-prairie-pearls-burgundy-1.jpg", "/products/corte-sorghum-prairie-pearls-cream-1.jpg"],
+    fotoBadge: "/products/corte-sorghum-prairie-badge.jpg",
     cultivares: ["PEARLS ORANGE", "PEARLS BRONZE", "PEARLS PINK", "PEARLS WHITE", "PEARLS BURGUNDY", "PEARLS CREAM"],
     cultivaresFotos: {
       "PEARLS ORANGE": ["/products/corte-sorghum-prairie-pearls-orange-1.jpg"],
@@ -501,6 +518,7 @@ export const produtos: Produto[] = [
     categoria: "jardim",
     foto: "/products/jardim-begonia-viking-pink-on-chocolate-1.jpg",
     fotos: ["/products/jardim-begonia-viking-pink-on-chocolate-1.jpg", "/products/jardim-begonia-viking-pink-on-green-1.jpg", "/products/jardim-begonia-viking-red-on-chocolate-1.jpg", "/products/jardim-begonia-viking-red-on-green-1.jpg", "/products/jardim-begonia-viking-red-on-green-explorer-1.jpg", "/products/jardim-begonia-viking-rose-on-green-explorer-1.jpg", "/products/jardim-begonia-viking-white-on-green-1.jpg"],
+    fotoBadge: "/products/jardim-begonia-viking-badge.jpg",
     cultivares: ["PINK ON CHOCOLATE", "PINK ON GREEN", "RED ON CHOCOLATE", "RED ON GREEN", "RED ON GREEN EXPLORER", "ROSE ON GREEN EXPLORER", "WHITE ON GREEN"],
     cultivaresFotos: {
       "PINK ON CHOCOLATE": ["/products/jardim-begonia-viking-pink-on-chocolate-1.jpg", "/products/jardim-begonia-viking-pink-on-chocolate-2.jpg", "/products/jardim-begonia-viking-pink-on-chocolate-3.jpg", "/products/jardim-begonia-viking-pink-on-chocolate-4.jpg"],
@@ -533,6 +551,7 @@ export const produtos: Produto[] = [
     categoria: "jardim",
     foto: "/products/jardim-sunpatiens-compact-1.jpg",
     fotos: ["/products/jardim-sunpatiens-compact-1.jpg", "/products/jardim-sunpatiens-compact-2.jpg", "/products/jardim-sunpatiens-compact-3.jpg", "/products/jardim-sunpatiens-compact-4.jpg", "/products/jardim-sunpatiens-compact-5.jpg", "/products/jardim-sunpatiens-compact-6.jpg", "/products/jardim-sunpatiens-compact-7.jpg", "/products/jardim-sunpatiens-compact-8.jpg"],
+    fotoBadge: "/products/jardim-sunpatiens-compact-badge.jpg",
     cultivares: ["BLUSH PINK", "CLASSIC WHITE", "DEEP ROSE", "ELETRIC ORANGE", "LILAC IMP", "MAGENTA IMP", "ROSE GLOW", "ORANGE", "ORCHID BLUSH", "RED", "RED CANDY", "WHITE IMP", "LAVANDER SPLESH", "PURPLE CANDY"],
     meta: "Sakata · Jardim · Florescimento precoce",
   },
@@ -556,6 +575,7 @@ export const produtos: Produto[] = [
     categoria: "jardim",
     foto: "/products/jardim-sunpatiens-vigorous-1.jpg",
     fotos: ["/products/jardim-sunpatiens-vigorous-1.jpg", "/products/jardim-sunpatiens-vigorous-2.jpg", "/products/jardim-sunpatiens-vigorous-3.jpg", "/products/jardim-sunpatiens-vigorous-4.jpg", "/products/jardim-sunpatiens-vigorous-5.jpg", "/products/jardim-sunpatiens-vigorous-6.jpg", "/products/jardim-sunpatiens-vigorous-7.jpg", "/products/jardim-sunpatiens-vigorous-8.jpg"],
+    fotoBadge: "/products/jardim-sunpatiens-vigorous-badge.jpg",
     cultivares: ["PEACH CANDY", "PINK KISS", "ROSE PINK", "PINK RED (V.RED)"],
     meta: "Sakata · Jardim · Florescimento precoce",
   },
@@ -579,6 +599,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-colibri-exotic-red-bling-1.jpg",
     fotos: ["/products/vaso-calibrachoa-colibri-exotic-red-bling-1.jpg", "/products/vaso-calibrachoa-colibri-malibu-pink-1.jpg", "/products/vaso-calibrachoa-colibri-pink-bling-1.jpg", "/products/vaso-calibrachoa-colibri-pink-lace-1.jpg", "/products/vaso-calibrachoa-colibri-purple-bling-1.jpg"],
+    fotoBadge: "/products/vaso-calibrachoa-colibri-badge.jpg",
     cultivares: ["EXOTIC RED BLING", "MALIBU PINK", "PINK BLING", "PINK LACE", "PURPLE BLING", "YELLOW CANARI"],
     cultivaresFotos: {
       "EXOTIC RED BLING": ["/products/vaso-calibrachoa-colibri-exotic-red-bling-1.jpg", "/products/vaso-calibrachoa-colibri-exotic-red-bling-2.jpg", "/products/vaso-calibrachoa-colibri-exotic-red-bling-3.jpg", "/products/vaso-calibrachoa-colibri-exotic-red-bling-4.jpg"],
@@ -609,6 +630,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-neo-1.jpg",
     fotos: ["/products/vaso-calibrachoa-neo-1.jpg"],
+    fotoBadge: "/products/vaso-calibrachoa-neo-badge.jpg",
     cultivares: [],
     meta: "Danziger · Vaso · Florescimento medio",
     _novo: true, // pendente revisão com Caio (breeder/categoria/tech chutados)
@@ -633,6 +655,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-ombre-1.jpg",
     fotos: ["/products/vaso-calibrachoa-ombre-1.jpg", "/products/vaso-calibrachoa-ombre-2.jpg", "/products/vaso-calibrachoa-ombre-3.jpg", "/products/vaso-calibrachoa-ombre-4.jpg", "/products/vaso-calibrachoa-ombre-5.jpg", "/products/vaso-calibrachoa-ombre-6.jpg", "/products/vaso-calibrachoa-ombre-7.jpg", "/products/vaso-calibrachoa-ombre-8.jpg"],
+    fotoBadge: "/products/vaso-calibrachoa-ombre-badge.jpg",
     cultivares: ["PINK"],
     meta: "Danziger · Vaso · Florescimento precoce",
   },
@@ -656,6 +679,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-oro-double-blue-1.jpg",
     fotos: ["/products/vaso-calibrachoa-oro-double-blue-1.jpg", "/products/vaso-calibrachoa-oro-double-magenta-1.jpg", "/products/vaso-calibrachoa-oro-double-red-1.jpg", "/products/vaso-calibrachoa-oro-double-white-1.jpg", "/products/vaso-calibrachoa-oro-double-yellow-1.jpg"],
+    fotoBadge: "/products/vaso-calibrachoa-oro-badge.jpg",
     cultivares: ["Double Blue", "Double Magenta", "Double Red", "Double White", "Double Yellow"],
     cultivaresFotos: {
       "Double Blue": ["/products/vaso-calibrachoa-oro-double-blue-1.jpg", "/products/vaso-calibrachoa-oro-double-blue-2.jpg", "/products/vaso-calibrachoa-oro-double-blue-3.jpg"],
@@ -687,6 +711,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-pazzaz-nano-fuchsia-1.jpg",
     fotos: ["/products/vaso-calibrachoa-pazzaz-nano-fuchsia-1.jpg", "/products/vaso-calibrachoa-pazzaz-nano-gold-1.jpg", "/products/vaso-calibrachoa-pazzaz-nano-hot-pink-1.jpg", "/products/vaso-calibrachoa-pazzaz-nano-orange-1.jpg", "/products/vaso-calibrachoa-pazzaz-nano-orange-twist-1.jpg"],
+    fotoBadge: "/products/vaso-calibrachoa-pazzaz-nano-badge.jpg",
     cultivares: ["Fuchsia", "Gold", "Hot Pink", "Orange", "Orange Twist"],
     cultivaresFotos: {
       "Fuchsia": ["/products/vaso-calibrachoa-pazzaz-nano-fuchsia-1.jpg"],
@@ -718,6 +743,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-rave-1.jpg",
     fotos: ["/products/vaso-calibrachoa-rave-1.jpg", "/products/vaso-calibrachoa-rave-2.jpg", "/products/vaso-calibrachoa-rave-3.jpg", "/products/vaso-calibrachoa-rave-4.jpg", "/products/vaso-calibrachoa-rave-5.jpg"],
+    fotoBadge: "/products/vaso-calibrachoa-rave-badge.jpg",
     cultivares: [],
     meta: "Danziger · Vaso · Florescimento medio",
     _novo: true, // pendente revisão com Caio (breeder/categoria/tech chutados)
@@ -742,6 +768,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-calibrachoa-uno-bakari-1.jpg",
     fotos: ["/products/vaso-calibrachoa-uno-bakari-1.jpg", "/products/vaso-calibrachoa-uno-firestorm-1.jpg", "/products/vaso-calibrachoa-uno-glamour-1.jpg", "/products/vaso-calibrachoa-uno-pink-barbados-1.jpg", "/products/vaso-calibrachoa-uno-yellow-1.jpg", "/products/vaso-calibrachoa-uno-white-yellow-eye-1.jpg"],
+    fotoBadge: "/products/vaso-calibrachoa-uno-badge.jpg",
     cultivares: ["BAKARI", "FIRESTORM", "GLAMOUR", "PINK BARBADOS", "YELLOW", "WHITE & YELLOW EYE"],
     cultivaresFotos: {
       "BAKARI": ["/products/vaso-calibrachoa-uno-bakari-1.jpg", "/products/vaso-calibrachoa-uno-bakari-2.jpg", "/products/vaso-calibrachoa-uno-bakari-3.jpg", "/products/vaso-calibrachoa-uno-bakari-4.jpg"],
@@ -773,6 +800,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-dahlia-meena-ajala-1.jpg",
     fotos: ["/products/vaso-dahlia-meena-ajala-1.jpg", "/products/vaso-dahlia-meena-aruna-1.jpg", "/products/vaso-dahlia-meena-jadoo-1.jpg", "/products/vaso-dahlia-meena-saira-1.jpg", "/products/vaso-dahlia-meena-shari-1.jpg", "/products/vaso-dahlia-meena-shiva-1.jpg", "/products/vaso-dahlia-meena-suna-17-1.jpg", "/products/vaso-dahlia-meena-yogi-1.jpg"],
+    fotoBadge: "/products/vaso-dahlia-meena-badge.jpg",
     cultivares: ["AJALA", "ARUNA", "JADOO", "SAIRA", "SHARI", "SHIVA", "SUNA '17", "YOGI", "RAVI", "ZARINA", "HIMAL", "SURYA", "NANDA", "GOA", "DESNA", "AMAL", "INDIRA", "KAILUA"],
     cultivaresFotos: {
       "AJALA": ["/products/vaso-dahlia-meena-ajala-1.jpg", "/products/vaso-dahlia-meena-ajala-2.jpg", "/products/vaso-dahlia-meena-ajala-3.jpg", "/products/vaso-dahlia-meena-ajala-4.jpg"],
@@ -816,6 +844,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-dianthus-diadeur-marie-1.jpg",
     fotos: ["/products/vaso-dianthus-diadeur-marie-1.jpg", "/products/vaso-dianthus-diadeur-mathilde-1.jpg", "/products/vaso-dianthus-diadeur-sissy-1.jpg", "/products/vaso-dianthus-diadeur-sissy-pink-1.jpg", "/products/vaso-dianthus-diadeur-sophie-1.jpg"],
+    fotoBadge: "/products/vaso-dianthus-diadeur-badge.jpg",
     cultivares: ["MARIE", "MATHILDE", "SISSY", "SISSY PINK", "SOPHIE"],
     cultivaresFotos: {
       "MARIE": ["/products/vaso-dianthus-diadeur-marie-1.jpg", "/products/vaso-dianthus-diadeur-marie-2.jpg", "/products/vaso-dianthus-diadeur-marie-3.jpg", "/products/vaso-dianthus-diadeur-marie-4.jpg"],
@@ -846,6 +875,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-dianthus-kisses-1.jpg",
     fotos: ["/products/vaso-dianthus-kisses-1.jpg", "/products/vaso-dianthus-kisses-2.jpg", "/products/vaso-dianthus-kisses-3.jpg", "/products/vaso-dianthus-kisses-4.jpg", "/products/vaso-dianthus-kisses-5.jpg", "/products/vaso-dianthus-kisses-6.jpg", "/products/vaso-dianthus-kisses-7.jpg", "/products/vaso-dianthus-kisses-8.jpg"],
+    fotoBadge: "/products/vaso-dianthus-kisses-badge.jpg",
     cultivares: ["I LOVE YOU", "PINK KISSES", "SCULLY"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
@@ -869,6 +899,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-dianthus-oscar-antique-pink-1.jpg",
     fotos: ["/products/vaso-dianthus-oscar-antique-pink-1.jpg", "/products/vaso-dianthus-oscar-cherry-1.jpg", "/products/vaso-dianthus-oscar-dark-red-1.jpg", "/products/vaso-dianthus-oscar-oscar-1.jpg", "/products/vaso-dianthus-oscar-pink-1.jpg", "/products/vaso-dianthus-oscar-pink-and-purple-1.jpg", "/products/vaso-dianthus-oscar-pink-star-1.jpg", "/products/vaso-dianthus-oscar-purple-wings-1.jpg"],
+    fotoBadge: "/products/vaso-dianthus-oscar-badge.jpg",
     cultivares: ["ANTIQUE PINK", "CHERRY", "DARK RED", "OSCAR", "PINK", "PINK AND PURPLE", "PINK STAR", "PURPLE WINGS", "RED", "WHITE", "BURGUNDY WHITE", "WHITE AND RED"],
     cultivaresFotos: {
       "ANTIQUE PINK": ["/products/vaso-dianthus-oscar-antique-pink-1.jpg", "/products/vaso-dianthus-oscar-antique-pink-2.jpg", "/products/vaso-dianthus-oscar-antique-pink-3.jpg", "/products/vaso-dianthus-oscar-antique-pink-4.jpg"],
@@ -905,6 +936,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-dipladenia-uni-compact-rose-1.jpg",
     fotos: ["/products/vaso-dipladenia-uni-compact-rose-1.jpg", "/products/vaso-dipladenia-uni-neon-pink-1.jpg", "/products/vaso-dipladenia-uni-pink-1.jpg", "/products/vaso-dipladenia-uni-red-1.jpg", "/products/vaso-dipladenia-uni-compact-white-1.jpg"],
+    fotoBadge: "/products/vaso-dipladenia-uni-badge.jpg",
     cultivares: ["COMPACT ROSE", "NEON PINK", "PINK", "RED", "COMPACT WHITE"],
     cultivaresFotos: {
       "COMPACT ROSE": ["/products/vaso-dipladenia-uni-compact-rose-1.jpg", "/products/vaso-dipladenia-uni-compact-rose-2.jpg"],
@@ -935,6 +967,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-geranio-moonlight-1.jpg",
     fotos: ["/products/vaso-geranio-moonlight-1.jpg", "/products/vaso-geranio-moonlight-2.jpg", "/products/vaso-geranio-moonlight-3.jpg", "/products/vaso-geranio-moonlight-4.jpg", "/products/vaso-geranio-moonlight-5.jpg", "/products/vaso-geranio-moonlight-6.jpg", "/products/vaso-geranio-moonlight-7.jpg", "/products/vaso-geranio-moonlight-8.jpg"],
+    fotoBadge: "/products/vaso-geranio-moonlight-badge.jpg",
     cultivares: ["CEMBALO", "DENISE", "GUIDO '15", "KATY '13", "LADY RAMONA", "LOKY '18", "LOUISE", "RUBY LEE", "SAILING", "THELMA", "VINETA", "VIOLINO", "VIVIAN"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
@@ -958,6 +991,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-geranio-royal-1.jpg",
     fotos: ["/products/vaso-geranio-royal-1.jpg", "/products/vaso-geranio-royal-2.jpg", "/products/vaso-geranio-royal-3.jpg", "/products/vaso-geranio-royal-4.jpg", "/products/vaso-geranio-royal-5.jpg", "/products/vaso-geranio-royal-6.jpg", "/products/vaso-geranio-royal-7.jpg", "/products/vaso-geranio-royal-8.jpg"],
+    fotoBadge: "/products/vaso-geranio-royal-badge.jpg",
     cultivares: ["AMETHYST", "BRILLIANT RED", "CANDY CHOC", "FIRE", "FROSTY PINK", "HOT PINK", "NIGHT 12", "PINK", "RED", "SWEET CANDY", "VIOLET", "WHITE WINGS"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
@@ -981,6 +1015,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-geranio-sunrise-1.jpg",
     fotos: ["/products/vaso-geranio-sunrise-1.jpg", "/products/vaso-geranio-sunrise-2.jpg", "/products/vaso-geranio-sunrise-3.jpg", "/products/vaso-geranio-sunrise-4.jpg"],
+    fotoBadge: "/products/vaso-geranio-sunrise-badge.jpg",
     cultivares: ["BENITA"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
@@ -1004,6 +1039,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-geranio-tumbao-1.jpg",
     fotos: ["/products/vaso-geranio-tumbao-1.jpg", "/products/vaso-geranio-tumbao-2.jpg", "/products/vaso-geranio-tumbao-3.jpg", "/products/vaso-geranio-tumbao-4.jpg", "/products/vaso-geranio-tumbao-5.jpg", "/products/vaso-geranio-tumbao-6.jpg", "/products/vaso-geranio-tumbao-7.jpg", "/products/vaso-geranio-tumbao-8.jpg"],
+    fotoBadge: "/products/vaso-geranio-tumbao-badge.jpg",
     cultivares: ["EXTRA PINK", "ON FIRE", "TUMBAO"],
     meta: "Selecta one · Vaso · Florescimento precoce",
   },
@@ -1027,6 +1063,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-petunia-amore-fiesta-1.jpg",
     fotos: ["/products/vaso-petunia-amore-fiesta-1.jpg", "/products/vaso-petunia-amore-king-of-heart-1.jpg", "/products/vaso-petunia-amore-pink-hearts-1.jpg", "/products/vaso-petunia-amore-queen-of-heart-1.jpg"],
+    fotoBadge: "/products/vaso-petunia-amore-badge.jpg",
     cultivares: ["FIESTA", "FLUTTERING HEART", "HEART E SOUL", "JOY", "KING OF HEART", "PINK HEARTS", "PURPLE", "QUEEN OF HEART"],
     cultivaresFotos: {
       "FIESTA": ["/products/vaso-petunia-amore-fiesta-1.jpg"],
@@ -1056,6 +1093,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-petunia-beautical-1.jpg",
     fotos: ["/products/vaso-petunia-beautical-1.jpg", "/products/vaso-petunia-beautical-2.jpg", "/products/vaso-petunia-beautical-3.jpg", "/products/vaso-petunia-beautical-4.jpg", "/products/vaso-petunia-beautical-5.jpg", "/products/vaso-petunia-beautical-6.jpg", "/products/vaso-petunia-beautical-7.jpg", "/products/vaso-petunia-beautical-8.jpg"],
+    fotoBadge: "/products/vaso-petunia-beautical-badge.jpg",
     cultivares: ["CARAMEL", "CINNAMON", "PEARL WHITE", "PURPLE DAWN", "RED MAPLE", "SUNRAY PINK", "SUNSET ORANGE", "WINE RED BORDEAUX", "YELLOW SUN", "CORAL STAR", "ROSE STAR"],
     meta: "Sakata · Vaso · Florescimento precoce",
   },
@@ -1079,6 +1117,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-petunia-capella-indigo-1.jpg",
     fotos: ["/products/vaso-petunia-capella-indigo-1.jpg", "/products/vaso-petunia-capella-mulberry-1.jpg", "/products/vaso-petunia-capella-pink-lace-1.jpg", "/products/vaso-petunia-capella-sangria-1.jpg", "/products/vaso-petunia-capella-hello-yellow-sunshine-1.jpg"],
+    fotoBadge: "/products/vaso-petunia-capella-badge.jpg",
     cultivares: ["INDIGO", "MULBERRY", "PINK LACE", "SANGRIA", "HELLO YELLOW SUNSHINE"],
     cultivaresFotos: {
       "INDIGO": ["/products/vaso-petunia-capella-indigo-1.jpg", "/products/vaso-petunia-capella-indigo-2.jpg", "/products/vaso-petunia-capella-indigo-3.jpg", "/products/vaso-petunia-capella-indigo-4.jpg"],
@@ -1109,6 +1148,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-petunia-cascadia-chili-red-1.jpg",
     fotos: ["/products/vaso-petunia-cascadia-chili-red-1.jpg", "/products/vaso-petunia-cascadia-pitaya-1.jpg", "/products/vaso-petunia-cascadia-purple-gem-1.jpg", "/products/vaso-petunia-cascadia-purple-ice-1.jpg", "/products/vaso-petunia-cascadia-rim-cherry-1.jpg", "/products/vaso-petunia-cascadia-fuchsia-1.jpg", "/products/vaso-petunia-cascadia-iceberg-1.jpg"],
+    fotoBadge: "/products/vaso-petunia-cascadia-badge.jpg",
     cultivares: ["CHILI RED", "PITAYA", "PURPLE GEM", "PURPLE ICE", "RIM CHERRY", "FUCHSIA", "ICEBERG"],
     cultivaresFotos: {
       "CHILI RED": ["/products/vaso-petunia-cascadia-chili-red-1.jpg", "/products/vaso-petunia-cascadia-chili-red-2.jpg", "/products/vaso-petunia-cascadia-chili-red-3.jpg", "/products/vaso-petunia-cascadia-chili-red-4.jpg"],
@@ -1141,6 +1181,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-petunia-ray-black-1.jpg",
     fotos: ["/products/vaso-petunia-ray-black-1.jpg", "/products/vaso-petunia-ray-pistachio-1.jpg", "/products/vaso-petunia-ray-shadow-1.jpg"],
+    fotoBadge: "/products/vaso-petunia-ray-badge.jpg",
     cultivares: ["BLACK", "PISTACHIO", "SHADOW"],
     cultivaresFotos: {
       "BLACK": ["/products/vaso-petunia-ray-black-1.jpg", "/products/vaso-petunia-ray-black-2.jpg", "/products/vaso-petunia-ray-black-3.jpg", "/products/vaso-petunia-ray-black-4.jpg"],
@@ -1169,6 +1210,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-petunia-sky-blue-berry-1.jpg",
     fotos: ["/products/vaso-petunia-sky-blue-berry-1.jpg", "/products/vaso-petunia-sky-cherry-1.jpg", "/products/vaso-petunia-sky-circus-1.jpg", "/products/vaso-petunia-sky-glacier-1.jpg", "/products/vaso-petunia-sky-lightning-1.jpg", "/products/vaso-petunia-sky-night-1.jpg", "/products/vaso-petunia-sky-purple-white-1.jpg"],
+    fotoBadge: "/products/vaso-petunia-sky-badge.jpg",
     cultivares: ["BLUE BERRY", "CHERRY", "CIRCUS", "GLACIER", "LIGHTNING", "NIGHT", "PURPLE WHITE"],
     cultivaresFotos: {
       "BLUE BERRY": ["/products/vaso-petunia-sky-blue-berry-1.jpg", "/products/vaso-petunia-sky-blue-berry-2.jpg", "/products/vaso-petunia-sky-blue-berry-3.jpg", "/products/vaso-petunia-sky-blue-berry-4.jpg"],
@@ -1201,6 +1243,7 @@ export const produtos: Produto[] = [
     categoria: "vaso",
     foto: "/products/vaso-petunia-supercal-1.jpg",
     fotos: ["/products/vaso-petunia-supercal-1.jpg", "/products/vaso-petunia-supercal-2.jpg", "/products/vaso-petunia-supercal-3.jpg", "/products/vaso-petunia-supercal-4.jpg", "/products/vaso-petunia-supercal-5.jpg", "/products/vaso-petunia-supercal-6.jpg", "/products/vaso-petunia-supercal-7.jpg", "/products/vaso-petunia-supercal-8.jpg"],
+    fotoBadge: "/products/vaso-petunia-supercal-badge.jpg",
     cultivares: ["ARTIST ROSE", "BLUE", "CHERRY IMP", "LAVANDER STAR", "NEON ROSE", "PINK", "ROSE", "ROYAL RED", "SNOWBERRY WHITE", "VIOLET", "LIGHT YELLOW"],
     meta: "Sakata · Vaso · Florescimento precoce",
   },

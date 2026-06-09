@@ -37,13 +37,6 @@ function cultivaresLabel(p: Produto): string {
 }
 
 function Card({ p }: { p: Produto }) {
-  const letter = p.breeder.charAt(0).toUpperCase();
-  const breederBg =
-    p.breeder === "selecta"
-      ? "#1E3A8A"
-      : p.breeder === "danziger"
-      ? "#6FA82A"
-      : "#C4242C";
   return (
     <Link href={`/produtos/${p.slug}`} className="pcard">
       <div className="pcard-photo">
@@ -52,11 +45,10 @@ function Card({ p }: { p: Produto }) {
           style={{ backgroundImage: `url('${p.foto}')` }}
         />
         <div
-          className="pcard-badge"
-          style={{ background: breederBg }}
-        >
-          <span className="pcard-badge-letter">{letter}</span>
-        </div>
+          className="pcard-badge pcard-badge-photo"
+          style={{ backgroundImage: `url('${p.fotoBadge}')` }}
+          aria-label={`Closeup de ${p.nome}`}
+        />
         <div className="pcard-overlay">
           <div className="pcard-overlay-text">{cultivaresLabel(p)}</div>
           <div className="pcard-overlay-link">Ver detalhes →</div>

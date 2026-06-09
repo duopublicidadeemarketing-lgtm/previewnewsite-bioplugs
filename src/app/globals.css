@@ -312,8 +312,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pcard-photo { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--bone); }
 .pcard-photo-img { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.85s cubic-bezier(0.16,1,0.3,1); }
 .pcard:hover .pcard-photo-img { transform: scale(1.06); }
-.pcard-badge { position: absolute; top: 14px; right: 14px; z-index: 2; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,0.92); box-shadow: 0 4px 16px rgba(15,25,34,0.18); transition: transform 0.4s ease; }
-.pcard:hover .pcard-badge { transform: scale(1.1); }
+.pcard-badge { position: absolute; top: 14px; right: 14px; z-index: 2; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #fff; box-shadow: 0 6px 22px rgba(15,25,34,0.22); transition: transform 0.4s ease; overflow: hidden; }
+.pcard-badge-photo { background-color: var(--bone); background-size: cover; background-position: center; }
+.pcard:hover .pcard-badge { transform: scale(1.08); box-shadow: 0 10px 28px rgba(15,25,34,0.28); }
 .pcard-badge-letter { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; font-weight: 700; color: white; }
 .pcard-overlay { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 1.4rem 1.2rem 1.2rem; background: linear-gradient(180deg, transparent 0%, rgba(15,25,34,0.85) 100%); color: white; transform: translateY(30%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
 .pcard:hover .pcard-overlay { transform: translateY(0); }
@@ -786,7 +787,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .pcard-name { font-size: 1.05rem; }
   .pcard-meta { font-size: 0.55rem; letter-spacing: 0.14em; }
   .pcard-body { padding: 0.85rem 0.85rem 1rem; }
-  .pcard-badge { width: 36px; height: 36px; top: 8px; right: 8px; }
+  .pcard-badge { width: 48px; height: 48px; top: 8px; right: 8px; border-width: 2px; }
   .pcard-badge-letter { font-size: 0.85rem; }
   .pcard-overlay { padding: 0.9rem 0.85rem; transform: translateY(0); }
   .pcard-overlay-text { display: none; }

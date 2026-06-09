@@ -1,0 +1,45 @@
+# Manifesto de badges escolhidos automaticamente.
+# Para sobrescrever um badge: substitua o arquivo <slug>-badge.jpg pela foto desejada.
+
+corte-carnation-sweeties	77	Carnation\MM 238\MM 238.JPG
+corte-dianthus-barbatus	77	Dianthus Barbatus\Tratadas\Kiwi Moss.png
+corte-gerbera-standard	93	Gerbera\Florencia\1718386511_g-florencia.jpg
+corte-girassol-girassol	75	Girassol\Omri Supreme- JG-214.jpeg
+corte-gypsophila-paniculata	67	Gypso\Dreamtastic\Selecta Dreamtastic Stemsf.jpg
+corte-limonium-enchante	88	Limonium\Enchante\ENCHANTÉ with close up.jpg
+corte-limonium-magnum	85	Limonium\Magnum\MAGNUM BLUE.jpeg
+corte-limonium-piuma	75	Limonium\Piuma\Sky\PIUMA SKY.jpeg
+corte-limonium-safora	85	Limonium\Safora\CLASSIC BLUE\Safora Classic Blue.jpeg
+corte-limonium-sensy	85	Limonium\Sensy\PINACOLADA\Sensy Pinia Colada(1).JPG
+corte-limonium-sinuatum	67	Limonium\Sinuatum\Noir TI\Noir TL (BPu1664S).png
+corte-limonium-sinuet	85	Limonium\Sinuet\BLUE IMPULSE\Sinuet Blue Impulse.jpeg
+corte-limonium-splendid	75	Limonium\Splendid\Splendid Blue.jpeg
+corte-limonium-superta	85	Limonium\Superta\VERMILINON\Superta-Vermillion-e1720638715283(1).png
+corte-limonium-supreme	75	Limonium\Supreme\BLUENIGHT\Supreme Bluenight(1)(1).jpg
+corte-sorghum-prairie	77	Sorghum\Pearls Bronze\Sorghum Prairie Pearls Bronze-Vase.JPG
+jardim-begonia-viking	85	Begônia Viking\Pink on Choco\begonia-viking-chocolate-pink-on-chocolate-high-res(1).png
+jardim-sunpatiens-compact	85	Sunpatiens\SUNPATIENS-20250606T135000Z-1-001\SUNPATIENS\COMPACT\RED CANDY\Impatiens_Sunpatiens_compact_Red_Candy_0015183__27023.jpg
+jardim-sunpatiens-vigorous	85	Sunpatiens\SUNPATIENS-20250606T135000Z-1-001\SUNPATIENS\COMPACT\RED CANDY\Impatiens_Sunpatiens_compact_Red_Candy_0015183__27023.jpg
+vaso-calibrachoa-colibri	85	Calibrachoa Colibri\Exotic Red Bling\Colibri-Exotic-Red-Bling-Square.png
+vaso-calibrachoa-neo	30	Calibrachoa Neo\MF-Neo-Firestorm-scaled.jpg
+vaso-calibrachoa-ombre	80	Calibrachoa Ombre\Ombre-Pink-Square.png
+vaso-calibrachoa-oro	77	Calibrachoa Oro\Double Magenta\Oro_Magenta.jpg
+vaso-calibrachoa-pazzaz-nano	75	Pazzaz Nano\Fuchsia\Pazzaz-Nano-Fuchsia.png
+vaso-calibrachoa-rave	85	Calibrachoa Rave\Calibrachoa_Rave_PinkBarbados_08958_flowers.jpg
+vaso-calibrachoa-uno	85	Calibrachoa Uno\Bakari.png
+vaso-dahlia-meena	85	Dahlias\Dahlia_Dalaya_Meena_Kalea.png
+vaso-dianthus-diadeur	85	Dianthus Diadeur\Sissy\Dianthus_DiaDeur_Sissy_02088 (2).jpg
+vaso-dianthus-kisses	85	Dianthus Kisses\DianthusIloveU_2_2400x2397.webp
+vaso-dianthus-oscar	85	Dianthus Oscar\Antique Pink\Dianthus_Oscar_AntiquePink_02541(1).jpg
+vaso-dipladenia-uni	93	Dipladenia\Dipladenia - DarkRed_Flower.png
+vaso-geranio-moonlight	85	Gerânio Moonlight\04107_pelargonium_ml_cembalo.jpg.webp
+vaso-geranio-royal	85	Gerânio Royal\ROYAL\Lilac Blue\Pelargonium_Royal_Lilac_Blue.jpg
+vaso-geranio-sunrise	35	Gerânio Sunrise\SR_Benita_Ambiente_3_retusche.jpg
+vaso-geranio-tumbao	77	Gerânio Tumbao\Moonlight-XL-Tumbao-Extra-Pink.png
+vaso-petunia-amore	75	Petunia Amore\Fiesta\Amore-Fiesta.png
+vaso-petunia-beautical	85	Beautical\BeautiCal-Red-Maple.jpg
+vaso-petunia-capella	85	Petunia Cappela\Indigo IMP\CAPELLA Indigo imp..png
+vaso-petunia-cascadia	85	Petunia Cascadias\Fuchsia\CASCADIAS Fuchsia.png
+vaso-petunia-ray	85	Petunia Ray\Shadow\Pétunia-Ray-Shadow-1937x2048.png
+vaso-petunia-sky	85	Petunia Sky\Cherry\Petunia_Famous_CherrySky25_07868.jpg
+vaso-petunia-supercal	77	Supercal\SUPERCAL ✅-20250606T132156Z-1-001\SUPERCAL ✅\ARTIST ROSE\Petunia_SuperCal_Artist-Rose_.png
