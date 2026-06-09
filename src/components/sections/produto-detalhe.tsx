@@ -61,6 +61,9 @@ export function ProdutoDetalhe({ p }: { p: Produto }) {
   // Galeria: usa o array de fotos do PRÓPRIO produto (1-5 fotos)
   const allPhotos = p.fotos && p.fotos.length > 0 ? p.fotos : [p.foto];
   const [active, setActive] = useState(0);
+  const total = allPhotos.length;
+  const prev = () => setActive((i) => (i - 1 + total) % total);
+  const next = () => setActive((i) => (i + 1) % total);
 
   return (
     <>
@@ -80,25 +83,40 @@ export function ProdutoDetalhe({ p }: { p: Produto }) {
               style={{ backgroundImage: `url('${allPhotos[active]}')` }}
             />
             <span className="pdet-gal-tag">Catálogo 26 / 27</span>
+            {total > 1 && (
+              <>
+                <button
+                  type="button"
+                  className="pdet-gal-arrow pdet-gal-arrow-prev"
+                  onClick={prev}
+                  aria-label="Foto anterior"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18 L9 12 L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="pdet-gal-arrow pdet-gal-arrow-next"
+                  onClick={next}
+                  aria-label="Próxima foto"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6 L15 12 L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                <div className="pdet-gal-counter">{active + 1} / {total}</div>
+              </>
+            )}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "0.6rem" }}>
+          <div className="pdet-gal-thumbs" style={{ gridTemplateColumns: `repeat(${Math.min(total, 5)}, 1fr)` }}>
             {allPhotos.map((src, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                style={{
-                  aspectRatio: "1",
-                  borderRadius: "4px",
-                  overflow: "hidden",
-                  cursor: "pointer",
-                  backgroundImage: `url('${src}')`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  border: active === i ? "2px solid var(--lime-deep)" : "2px solid transparent",
-                  opacity: active === i ? 1 : 0.65,
-                  transition: "all 0.3s ease",
-                  padding: 0,
-                }}
+                className={`pdet-gal-thumb${active === i ? " is-active" : ""}`}
+                style={{ backgroundImage: `url('${src}')` }}
+                aria-label={`Foto ${i + 1}`}
               />
             ))}
           </div>
@@ -140,6 +158,28 @@ export function ProdutoDetalhe({ p }: { p: Produto }) {
         <Pill icon={ICONS.cheiro} label="Cheiro" value={p.cheiro ? "Sim" : "Não"} />
         <Pill icon={ICONS.sazo} label="Sazonalidade" value={cap(p.sazonalidade)} />
       </div>
+
+      {p.cultivares && p.cultivares.length > 0 && (
+        <section className="pdet-cultivares">
+          <div className="pdet-cultivares-head">
+            <div className="pdet-cultivares-eyebrow">{p.cultivares.length} {p.cultivares.length === 1 ? "variedade" : "variedades"} no catálogo 26/27</div>
+            <h2 className="pdet-cultivares-title">
+              Cultivares <span className="it">disponíveis.</span>
+            </h2>
+            <p className="pdet-cultivares-sub">
+              Cada cultivar abaixo é uma cor / variação de {p.nome}. Consulte safra e disponibilidade no momento do orçamento.
+            </p>
+          </div>
+          <ul className="pdet-cultivares-grid">
+            {p.cultivares.map((c) => (
+              <li key={c} className="pdet-cultivar-chip">
+                <span className="pdet-cultivar-dot" aria-hidden />
+                <span className="pdet-cultivar-name">{c}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="pdet-tech">
         <div className="pdet-tech-side">

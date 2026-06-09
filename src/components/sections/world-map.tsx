@@ -14,7 +14,7 @@ type Pt = {
 };
 
 const pts: Pt[] = [
-  { id: "br", name: "Bioplugs · Brasil", coords: [-47.0, -22.9], hq: true },
+  { id: "br", name: "Bio Plugs", coords: [-47.0, -22.9], hq: true },
   { id: "de", name: "Selecta one", coords: [10.0, 51.2] },
   { id: "il", name: "Danziger", coords: [34.8, 31.8] },
   { id: "jp", name: "Sakata", coords: [135.5, 34.5] },

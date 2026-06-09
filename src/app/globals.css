@@ -241,9 +241,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ─── FOOTER ─── */
 .v10-footer { background: var(--ink); color: white; padding: 5rem 4rem 1.6rem; }
 .v10-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.v10-footer-brand h2 { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; margin-bottom: 0.4rem; }
+.v10-footer-logo { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.v10-footer-logo-img { width: 56px; height: 56px; object-fit: contain; flex-shrink: 0; }
+.v10-footer-brand h2 { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1; }
 .v10-footer-brand h2 em { color: var(--lime); font-style: italic; }
-.v10-footer-brand p { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2rem; }
+.v10-footer-brand p { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0; }
+.v10-footer-logo + .v10-footer-info, .v10-footer-brand .v10-footer-logo ~ .v10-footer-info { margin-top: 0; }
 .v10-footer-info { font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
 .v10-fcol h4 { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime); margin-bottom: 1.2rem; }
 .v10-fcol ul { list-style: none; padding: 0; margin: 0; }
@@ -327,11 +330,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pdet-breadcrumb a:hover { color: var(--lime-deep); }
 .pdet-breadcrumb .sep { color: var(--line); }
 .pdet-breadcrumb .current { color: var(--ink); font-style: italic; font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; }
-.pdet-hero { padding: 0 4rem 5rem; display: grid; grid-template-columns: 1.05fr 1fr; gap: 5rem; align-items: start; }
-.pdet-gallery { position: sticky; top: 92px; }
-.pdet-gal-main { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; background: var(--bone); margin-bottom: 1rem; }
+.pdet-hero { padding: 0 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.pdet-gallery { position: sticky; top: 92px; max-width: 540px; }
+.pdet-gal-main { position: relative; width: 100%; aspect-ratio: 1/1; max-height: 540px; border-radius: 4px; overflow: hidden; background: var(--bone); margin-bottom: 1rem; }
 .pdet-gal-img { position: absolute; inset: 0; background-size: cover; background-position: center; transition: opacity 0.5s ease; }
 .pdet-gal-tag { position: absolute; top: 1.2rem; left: 1.2rem; z-index: 2; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.42rem 0.95rem; background: rgba(255,255,255,0.94); color: var(--ink); border-radius: 999px; }
+.pdet-gal-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.94); color: var(--ink); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(15,25,34,0.12); transition: all 0.25s ease; }
+.pdet-gal-arrow:hover { background: var(--lime); color: #fff; transform: translateY(-50%) scale(1.06); }
+.pdet-gal-arrow-prev { left: 1rem; }
+.pdet-gal-arrow-next { right: 1rem; }
+.pdet-gal-counter { position: absolute; bottom: 1.2rem; right: 1.2rem; z-index: 2; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; padding: 0.38rem 0.85rem; background: rgba(15,25,34,0.78); color: #fff; border-radius: 999px; }
+.pdet-gal-thumbs { display: grid; gap: 0.6rem; }
+.pdet-gal-thumb { aspect-ratio: 1; border-radius: 4px; overflow: hidden; cursor: pointer; background-size: cover; background-position: center; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s ease; padding: 0; }
+.pdet-gal-thumb:hover { opacity: 0.85; }
+.pdet-gal-thumb.is-active { border-color: var(--lime-deep); opacity: 1; }
+
+/* Cultivares — variedades disponíveis por produto */
+.pdet-cultivares { padding: 0 4rem 5rem; max-width: 1280px; margin: 0 auto; }
+.pdet-cultivares-head { max-width: 720px; margin-bottom: 2.4rem; }
+.pdet-cultivares-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.32em; color: var(--lime-deep); text-transform: uppercase; margin-bottom: 1rem; }
+.pdet-cultivares-eyebrow::before { content:''; width: 28px; height: 1.5px; background: var(--lime-deep); }
+.pdet-cultivares-title { font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 0.8rem; color: var(--ink); }
+.pdet-cultivares-title .it { font-style: italic; color: var(--lime-deep); }
+.pdet-cultivares-sub { font-size: 0.95rem; line-height: 1.55; color: var(--ink-soft); max-width: 560px; }
+.pdet-cultivares-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.7rem; }
+.pdet-cultivar-chip { display: flex; align-items: center; gap: 0.7rem; padding: 0.95rem 1.15rem; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; transition: all 0.25s ease; }
+.pdet-cultivar-chip:hover { border-color: var(--lime); background: var(--lime-pale); transform: translateY(-1px); }
+.pdet-cultivar-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); flex-shrink: 0; box-shadow: 0 0 0 3px rgba(141,198,63,0.18); }
+.pdet-cultivar-name { font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; color: var(--ink); text-transform: uppercase; line-height: 1.2; }
 .pdet-info-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.32em; color: var(--lime-deep); text-transform: uppercase; margin-bottom: 1.2rem; }
 .pdet-info-eyebrow::before { content:''; width: 28px; height: 1.5px; background: var(--lime-deep); }
 .pdet-info-title { font-family: var(--font-display); font-style: italic; font-size: clamp(2.6rem, 4vw, 4rem); font-weight: 600; line-height: 1; letter-spacing: -0.015em; margin-bottom: 0.5rem; }
@@ -605,7 +631,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Tablet (≤ 1100px) */
 @media (max-width: 1100px) {
-  .v10-nav, .v10-section, .v10-hero, .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final, .v10-footer, .cat-hero, .cat-band, .cat-filter-row, .pdet-breadcrumb, .pdet-hero, .pdet-tech, .pdet-bcta { padding-left: 2rem; padding-right: 2rem; }
+  .v10-nav, .v10-section, .v10-hero, .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final, .v10-footer, .cat-hero, .cat-band, .cat-filter-row, .pdet-breadcrumb, .pdet-hero, .pdet-tech, .pdet-bcta, .pdet-cultivares { padding-left: 2rem; padding-right: 2rem; }
   .v10-intro, .v10-cta-final, .v10-process-grid { grid-template-columns: 1fr; gap: 3rem; }
   .v10-cat-grid, .v10-breeder-cards { grid-template-columns: 1fr 1fr; }
   .v10-var-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; min-height: 0; }
@@ -626,7 +652,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Mobile (≤ 720px) */
 @media (max-width: 720px) {
   body { font-size: 15px; }
-  .v10-nav, .v10-section, .v10-hero, .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final, .v10-footer, .cat-hero, .cat-band, .cat-filter-row, .pdet-breadcrumb, .pdet-hero, .pdet-tech, .pdet-bcta { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .v10-nav, .v10-section, .v10-hero, .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final, .v10-footer, .cat-hero, .cat-band, .cat-filter-row, .pdet-breadcrumb, .pdet-hero, .pdet-tech, .pdet-bcta, .pdet-cultivares { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .pdet-gallery { max-width: 100%; }
+  .pdet-gal-arrow { width: 40px; height: 40px; }
+  .pdet-cultivares-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.5rem; }
 
   /* Section vertical padding scaled down */
   .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final { padding-top: 4rem; padding-bottom: 4rem; }

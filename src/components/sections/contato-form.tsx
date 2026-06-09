@@ -10,8 +10,9 @@ const PERFIS: { value: Perfil; label: string }[] = [
   { value: "parceiro", label: "Parceiro comercial" },
 ];
 
-const TELEFONE_INSTITUCIONAL = "(11) 0000-0000";
-const TELEFONE_WHATSAPP = "5511000000000"; // padrão wa.me
+const TELEFONE_INSTITUCIONAL = "(11) 94440-9993";
+const TELEFONE_WHATSAPP = "5511944409993"; // padrão wa.me
+const EMAIL_COMERCIAL = "programacao@bioplugs.com.br";
 
 export function ContatoForm() {
   const [perfil, setPerfil] = useState<Perfil>("produtor");
@@ -97,23 +98,17 @@ export function ContatoForm() {
                 <label htmlFor="empresa">Nome da fazenda / empresa</label>
                 <input id="empresa" name="empresa" type="text" />
               </div>
-              <div className="contato-field-row">
-                <div className="contato-field">
-                  <label htmlFor="area">Área de produção (m²)</label>
-                  <input id="area" name="area" type="text" placeholder="ex: 5.000 m²" />
-                </div>
-                <div className="contato-field">
-                  <label htmlFor="categoria">Categoria de interesse</label>
-                  <select id="categoria" name="categoria" defaultValue="">
-                    <option value="" disabled>
-                      Selecione…
-                    </option>
-                    <option value="corte">Corte</option>
-                    <option value="jardim">Jardim</option>
-                    <option value="vaso">Vaso</option>
-                    <option value="todas">Todas as categorias</option>
-                  </select>
-                </div>
+              <div className="contato-field">
+                <label htmlFor="categoria">Categoria de interesse</label>
+                <select id="categoria" name="categoria" defaultValue="">
+                  <option value="" disabled>
+                    Selecione…
+                  </option>
+                  <option value="corte">Corte</option>
+                  <option value="jardim">Jardim</option>
+                  <option value="vaso">Vaso</option>
+                  <option value="todas">Todas as categorias</option>
+                </select>
               </div>
             </>
           )}
@@ -200,7 +195,7 @@ export function ContatoForm() {
         <div className="contato-info-block">
           <div className="contato-info-label">Email comercial</div>
           <div className="contato-info-value">
-            <a href="mailto:contato@bioplugs.com.br">contato@bioplugs.com.br</a>
+            <a href={`mailto:${EMAIL_COMERCIAL}`}>{EMAIL_COMERCIAL}</a>
           </div>
         </div>
 
@@ -214,7 +209,9 @@ export function ContatoForm() {
         <div className="contato-info-block">
           <div className="contato-info-label">Horário de atendimento</div>
           <div className="contato-info-value">
-            Segunda a sexta — 8h às 17h30
+            Segunda a quinta — 8h às 17h
+            <br />
+            Sexta — 8h às 16h
           </div>
         </div>
 
