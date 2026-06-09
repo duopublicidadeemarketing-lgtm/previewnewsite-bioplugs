@@ -58,12 +58,31 @@ const ICONS = {
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 export function ProdutoDetalhe({ p }: { p: Produto }) {
-  // Galeria: usa o array de fotos do PRÓPRIO produto (1-5 fotos)
-  const allPhotos = p.fotos && p.fotos.length > 0 ? p.fotos : [p.foto];
+  // Cultivar ativo: quando existe cultivaresFotos, o usuário pode escolher uma cultivar e
+  // ver as fotos específicas dela; senão, mostra galeria geral do produto.
+  const cultivaresComFoto = p.cultivaresFotos
+    ? p.cultivares.filter((c) => p.cultivaresFotos?.[c]?.length)
+    : [];
+  const temFotoPorCultivar = cultivaresComFoto.length > 0;
+
+  const [cultivarAtivo, setCultivarAtivo] = useState<string | null>(null);
   const [active, setActive] = useState(0);
+
+  const allPhotos = (() => {
+    if (cultivarAtivo && p.cultivaresFotos?.[cultivarAtivo]?.length) {
+      return p.cultivaresFotos[cultivarAtivo];
+    }
+    return p.fotos && p.fotos.length > 0 ? p.fotos : [p.foto];
+  })();
+
   const total = allPhotos.length;
   const prev = () => setActive((i) => (i - 1 + total) % total);
   const next = () => setActive((i) => (i + 1) % total);
+
+  const selectCultivar = (c: string | null) => {
+    setCultivarAtivo(c);
+    setActive(0);
+  };
 
   return (
     <>
@@ -82,7 +101,9 @@ export function ProdutoDetalhe({ p }: { p: Produto }) {
               className="pdet-gal-img"
               style={{ backgroundImage: `url('${allPhotos[active]}')` }}
             />
-            <span className="pdet-gal-tag">Catálogo 26 / 27</span>
+            <span className="pdet-gal-tag">
+              {cultivarAtivo ? cultivarAtivo : "Catálogo 26 / 27"}
+            </span>
             {total > 1 && (
               <>
                 <button
@@ -167,17 +188,56 @@ export function ProdutoDetalhe({ p }: { p: Produto }) {
               Cultivares <span className="it">disponíveis.</span>
             </h2>
             <p className="pdet-cultivares-sub">
-              Cada cultivar abaixo é uma cor / variação de {p.nome}. Consulte safra e disponibilidade no momento do orçamento.
+              {temFotoPorCultivar
+                ? "Clique em uma cultivar para ver suas fotos específicas. Consulte safra e disponibilidade no momento do orçamento."
+                : `Cada cultivar abaixo é uma cor / variação de ${p.nome}. Consulte safra e disponibilidade no momento do orçamento.`}
             </p>
+            {temFotoPorCultivar && cultivarAtivo && (
+              <button
+                type="button"
+                className="pdet-cultivar-clear"
+                onClick={() => selectCultivar(null)}
+              >
+                ← Ver todas as fotos do produto
+              </button>
+            )}
           </div>
-          <ul className="pdet-cultivares-grid">
-            {p.cultivares.map((c) => (
-              <li key={c} className="pdet-cultivar-chip">
-                <span className="pdet-cultivar-dot" aria-hidden />
-                <span className="pdet-cultivar-name">{c}</span>
-              </li>
-            ))}
-          </ul>
+          {temFotoPorCultivar ? (
+            <ul className="pdet-cultivares-cards">
+              {p.cultivares.map((c) => {
+                const photos = p.cultivaresFotos?.[c] ?? [];
+                const hasPhoto = photos.length > 0;
+                const isActive = cultivarAtivo === c;
+                return (
+                  <li key={c} className={`pdet-cultivar-card${isActive ? " is-active" : ""}${!hasPhoto ? " no-photo" : ""}`}>
+                    <button
+                      type="button"
+                      onClick={() => hasPhoto && selectCultivar(isActive ? null : c)}
+                      disabled={!hasPhoto}
+                      className="pdet-cultivar-card-btn"
+                    >
+                      <div
+                        className="pdet-cultivar-card-img"
+                        style={hasPhoto ? { backgroundImage: `url('${photos[0]}')` } : undefined}
+                      >
+                        {!hasPhoto && <span className="pdet-cultivar-card-empty">Foto em breve</span>}
+                      </div>
+                      <div className="pdet-cultivar-card-name">{c}</div>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <ul className="pdet-cultivares-grid">
+              {p.cultivares.map((c) => (
+                <li key={c} className="pdet-cultivar-chip">
+                  <span className="pdet-cultivar-dot" aria-hidden />
+                  <span className="pdet-cultivar-name">{c}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       )}
 

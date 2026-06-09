@@ -358,6 +358,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pdet-cultivar-chip:hover { border-color: var(--lime); background: var(--lime-pale); transform: translateY(-1px); }
 .pdet-cultivar-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); flex-shrink: 0; box-shadow: 0 0 0 3px rgba(141,198,63,0.18); }
 .pdet-cultivar-name { font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; color: var(--ink); text-transform: uppercase; line-height: 1.2; }
+
+/* Cultivares com foto — cards estilo "Cores" */
+.pdet-cultivar-clear { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lime-deep); background: none; border: none; cursor: pointer; padding: 0.5rem 0; transition: color 0.2s ease; }
+.pdet-cultivar-clear:hover { color: var(--ink); }
+.pdet-cultivares-cards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.4rem; }
+.pdet-cultivar-card { transition: transform 0.25s ease; }
+.pdet-cultivar-card-btn { width: 100%; background: none; border: none; padding: 0; cursor: pointer; text-align: left; font: inherit; color: inherit; display: flex; flex-direction: column; gap: 0.85rem; }
+.pdet-cultivar-card-btn:disabled { cursor: default; opacity: 0.5; }
+.pdet-cultivar-card-img { aspect-ratio: 1/1; width: 100%; border-radius: 4px; overflow: hidden; background-color: var(--bone); background-size: cover; background-position: center; border: 2px solid transparent; transition: all 0.3s ease; position: relative; display: flex; align-items: center; justify-content: center; }
+.pdet-cultivar-card.is-active .pdet-cultivar-card-img { border-color: var(--lime-deep); box-shadow: 0 6px 24px rgba(141, 198, 63, 0.25); transform: translateY(-2px); }
+.pdet-cultivar-card-btn:hover:not(:disabled) .pdet-cultivar-card-img { border-color: var(--lime); transform: translateY(-2px); }
+.pdet-cultivar-card-empty { font-family: var(--font-body); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); opacity: 0.7; padding: 0 1rem; text-align: center; }
+.pdet-cultivar-card-name { font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--ink); text-transform: uppercase; text-align: center; line-height: 1.25; }
+.pdet-cultivar-card.is-active .pdet-cultivar-card-name { color: var(--lime-deep); }
 .pdet-info-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.32em; color: var(--lime-deep); text-transform: uppercase; margin-bottom: 1.2rem; }
 .pdet-info-eyebrow::before { content:''; width: 28px; height: 1.5px; background: var(--lime-deep); }
 .pdet-info-title { font-family: var(--font-display); font-style: italic; font-size: clamp(2.6rem, 4vw, 4rem); font-weight: 600; line-height: 1; letter-spacing: -0.015em; margin-bottom: 0.5rem; }
@@ -656,6 +670,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .pdet-gallery { max-width: 100%; }
   .pdet-gal-arrow { width: 40px; height: 40px; }
   .pdet-cultivares-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.5rem; }
+  .pdet-cultivares-cards { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
   /* Section vertical padding scaled down */
   .v10-intro, .v10-categories, .v10-varieties, .v10-breeders, .v10-process, .v10-cta-final { padding-top: 4rem; padding-bottom: 4rem; }
