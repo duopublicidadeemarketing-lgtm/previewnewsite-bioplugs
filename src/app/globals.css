@@ -286,6 +286,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cat-fchip-cat .cat-fchip-c { font-family: var(--font-body); font-style: normal; font-size: 0.7rem; font-weight: 700; color: var(--lime-deep); margin-left: 0.4rem; padding: 0.15rem 0.45rem; background: var(--bone); border-radius: 999px; transition: all 0.25s ease; }
 .cat-fchip-cat.active .cat-fchip-c { background: rgba(255,255,255,0.18); color: var(--lime); }
 .cat-filter-spacer { flex: 1; }
+.cat-filter-search { position: relative; display: flex; align-items: center; flex: 1 1 280px; max-width: 360px; }
+.cat-filter-search svg { position: absolute; left: 0.9rem; color: var(--ink-soft); pointer-events: none; }
+.cat-filter-search input { width: 100%; padding: 0.55rem 1rem 0.55rem 2.4rem; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-family: var(--font-body); font-size: 0.85rem; color: var(--ink); transition: all 0.2s ease; outline: none; }
+.cat-filter-search input::placeholder { color: var(--ink-soft); }
+.cat-filter-search input:focus { border-color: var(--lime-deep); box-shadow: 0 0 0 3px rgba(141, 198, 63, 0.15); }
 .cat-filter-divider { width: 1px; height: 28px; background: var(--line); margin: 0 0.4rem; }
 .cat-filter-count { font-size: 0.85rem; font-weight: 700; color: var(--ink); }
 .cat-filter-count em { font-style: normal; color: var(--lime-deep); }

@@ -84,18 +84,29 @@ export function CatalogoView() {
     });
   };
 
-  const clear = () => setF(initial());
+  const [search, setSearch] = useState("");
+
+  const clear = () => {
+    setF(initial());
+    setSearch("");
+  };
+
+  // Normaliza string pra busca (remove acentos + lower)
+  const normalize = (s: string) =>
+    s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
   const filtered = useMemo(() => {
+    const q = normalize(search.trim());
     return ALL.filter((p) => {
       if (f.categoria.size > 0 && !f.categoria.has(p.categoria)) return false;
       if (f.breeder.size > 0 && !f.breeder.has(p.breeder)) return false;
       if (f.sazonalidade.size > 0 && !f.sazonalidade.has(p.sazonalidade)) return false;
       if (f.vigor.size > 0 && !f.vigor.has(p.vigor)) return false;
       if (f.cheiro.size > 0 && !p.cheiro) return false;
+      if (q && !normalize(p.nome).includes(q)) return false;
       return true;
     });
-  }, [f]);
+  }, [f, search]);
 
   const counts = useMemo(
     () => ({
@@ -107,7 +118,8 @@ export function CatalogoView() {
   );
 
   const hasAny =
-    f.categoria.size + f.breeder.size + f.sazonalidade.size + f.vigor.size + f.cheiro.size > 0;
+    f.categoria.size + f.breeder.size + f.sazonalidade.size + f.vigor.size + f.cheiro.size > 0 ||
+    search.trim().length > 0;
   const isCatActive = f.categoria.size > 0;
 
   const chip = <K extends keyof FilterState>(
@@ -182,7 +194,19 @@ export function CatalogoView() {
               Vaso <span className="cat-fchip-c">{countByCategoria.vaso}</span>
             </button>
           </div>
-          <div className="cat-filter-spacer" />
+          <div className="cat-filter-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8" />
+              <path d="M21 21l-4.3-4.3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            </svg>
+            <input
+              type="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Buscar variedade…"
+              autoComplete="off"
+            />
+          </div>
           {hasAny && (
             <button className="cat-filter-clear" onClick={clear}>
               Limpar filtros

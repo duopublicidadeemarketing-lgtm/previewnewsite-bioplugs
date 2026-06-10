@@ -139,7 +139,7 @@ export const produtos: Produto[] = [
   },
   {
     slug: "corte-girassol-girassol",
-    nome: "Girassol Girassol",
+    nome: "Girassol",
     especie: "Girassol",
     familia: "Girassol",
     florescimento: "precoce",
